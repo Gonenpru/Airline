@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/canvasjs.min.js"></script>
+
+</head>
+<body>
+	<div id = "chartContainer" style = "height: 200px; width: 100%;" />
+	<script>
+		window.onload = function () {
+			var dataPoints = [{y : Number((Math.random() * (10 - 5) + 5).toFixed())}];
+			var chart = new CanvasJS.Chart("chartContainer", {
+				data : [{
+					legendText: "PPM",
+					showInLegend: true, 
+					type : "spline",
+					dataPoints : dataPoints
+				}
+				]
+			});
+
+			chart.render();
+
+			var yVal = 15, updateCount = 0;
+			var updateChart = function () {
+
+				yVal = Number((Math.random() * (10 - 5) + 5).toFixed());
+				updateCount++;
+
+				dataPoints.push({
+					y : yVal
+				});
+				
+
+				chart.render();    
+
+			};
+
+	setInterval(function(){updateChart()}, 1000);
+}	
+</script>
+
+</body>
+</html>
