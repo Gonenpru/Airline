@@ -108,7 +108,7 @@
 	</div>
 </div>
 <footer>
-	<p>&copy 2016 Goncelay Corporation</a></p>
+	<p>&copy 2016 Gonenpru Corporation</a></p>
 </footer>
 </section>
 <script src="js/jquery.nicescroll.js"></script>
