@@ -36,7 +36,7 @@
 			<div class="left-side-inner">
 				<ul class="nav nav-pills nav-stacked custom-nav">
 					<li><a href="manager.html"><i class="lnr lnr-diamond"></i><span>Dashboard</span></a></li> 
-					<li><a href="mapamundi.html"><i class="lnr lnr-earth"></i><span>World Map</span></a></li>
+					<li><a href="timetable.jsp"><i class="lnr lnr-earth"></i><span>Routes</span></a></li>
 				</ul>
 			</div>
 		</div>

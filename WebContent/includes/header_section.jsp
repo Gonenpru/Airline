@@ -1,4 +1,3 @@
-
 <div class="header-section">
 	<div class="menu-right">
 		<div class="user-panel-top">
