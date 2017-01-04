@@ -12,7 +12,7 @@ import utils.HibernateUtils;
 public class prueba {
 
 	private static Session session;
-	
+	/*
 	public static void main(String[] args) {
 		session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
@@ -24,6 +24,7 @@ public class prueba {
 		session.close();
 		//readPlanes();
 	}
+	*/
 	
 	public static byte[] hexStringToByteArray(String s) {
 	    int len = s.length();
@@ -37,7 +38,6 @@ public class prueba {
 
 	@SuppressWarnings("unchecked")
 	public static void readPlanes(){
-		System.out.println("Inside");
 		Query queryResult = session.createQuery("from Airlines");
 		List<Airlines> allPlanes = queryResult.list();
 		for (int i = 0; i < allPlanes.size(); i++) {

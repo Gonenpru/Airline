@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<package name="default" extends="struts-default" namespace="/">
+
+		<action name="add"
+			class="action.PlanesAction"
+			method="add">
+			<result name="success">jsp/planes.jsp</result>
+			<result name="input">jsp/planes.jsp</result>
+		</action>
+
+		<action name="delete"
+			class="action.PlanesAction"
+			method="edit">
+			<result name="success">jsp/planes.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action>
+
+		<action name="delete"
+			class="action.PlanesAction"
+			method="delete">
+			<result name="success">jsp/planes.jsp</result>
+		</action>
+
+		<action name="list"
+			class="action.PlanesAction"
+			method="list">
+			<result name="success">jsp/planes.jsp</result>
+		</action>
+	</package>
+</struts>
