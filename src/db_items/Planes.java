@@ -1,9 +1,6 @@
 package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,9 +28,6 @@ public class Planes implements java.io.Serializable {
 	
 	@Column(name="planeStatus")
 	private PlaneStatus planeStatus;
-	
-	private Set planeMovementses = new HashSet(0);
-	private Set flightses = new HashSet(0);
 
 	public Planes() {
 	}
@@ -43,16 +37,6 @@ public class Planes implements java.io.Serializable {
 		this.airlines = airlines;
 		this.planeModels = planeModels;
 		this.planeStatus = planeStatus;
-	}
-
-	public Planes(int id, Airlines airlines, PlaneModels planeModels, PlaneStatus planeStatus, Set planeMovementses,
-			Set flightses) {
-		this.id = id;
-		this.airlines = airlines;
-		this.planeModels = planeModels;
-		this.planeStatus = planeStatus;
-		this.planeMovementses = planeMovementses;
-		this.flightses = flightses;
 	}
 
 	public int getId() {
@@ -86,21 +70,4 @@ public class Planes implements java.io.Serializable {
 	public void setPlaneStatus(PlaneStatus planeStatus) {
 		this.planeStatus = planeStatus;
 	}
-
-	public Set getPlaneMovementses() {
-		return this.planeMovementses;
-	}
-
-	public void setPlaneMovementses(Set planeMovementses) {
-		this.planeMovementses = planeMovementses;
-	}
-
-	public Set getFlightses() {
-		return this.flightses;
-	}
-
-	public void setFlightses(Set flightses) {
-		this.flightses = flightses;
-	}
-
 }

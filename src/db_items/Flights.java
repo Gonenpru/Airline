@@ -2,8 +2,6 @@ package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,8 +48,7 @@ public class Flights implements java.io.Serializable {
 	
 	@Column(name="dateArrival")
 	private Date dateArrival;
-	
-	private Set ticketses = new HashSet(0);
+
 
 	public Flights() {
 	}
@@ -65,7 +62,7 @@ public class Flights implements java.io.Serializable {
 	}
 
 	public Flights(int id, Baggages baggages, Gates gates, Planes planes, Routes routes, Integer duration,
-			Integer delay, Date dateDeparture, Date dateArrival, Set ticketses) {
+			Integer delay, Date dateDeparture, Date dateArrival) {
 		this.id = id;
 		this.baggages = baggages;
 		this.gates = gates;
@@ -75,7 +72,6 @@ public class Flights implements java.io.Serializable {
 		this.delay = delay;
 		this.dateDeparture = dateDeparture;
 		this.dateArrival = dateArrival;
-		this.ticketses = ticketses;
 	}
 
 	public int getId() {
@@ -149,13 +145,4 @@ public class Flights implements java.io.Serializable {
 	public void setDateArrival(Date dateArrival) {
 		this.dateArrival = dateArrival;
 	}
-
-	public Set getTicketses() {
-		return this.ticketses;
-	}
-
-	public void setTicketses(Set ticketses) {
-		this.ticketses = ticketses;
-	}
-
 }

@@ -1,9 +1,6 @@
 package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,10 +23,6 @@ public class Terminals implements java.io.Serializable {
 	@Column(name="name")
 	private String name;
 	
-	
-	private Set gateses = new HashSet(0);
-	private Set baggageses = new HashSet(0);
-
 	public Terminals() {
 	}
 
@@ -37,11 +30,9 @@ public class Terminals implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Terminals(int id, String name, Set gateses, Set baggageses) {
+	public Terminals(int id, String name) {
 		this.id = id;
 		this.name = name;
-		this.gateses = gateses;
-		this.baggageses = baggageses;
 	}
 
 	public int getId() {
@@ -59,21 +50,4 @@ public class Terminals implements java.io.Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Set getGateses() {
-		return this.gateses;
-	}
-
-	public void setGateses(Set gateses) {
-		this.gateses = gateses;
-	}
-
-	public Set getBaggageses() {
-		return this.baggageses;
-	}
-
-	public void setBaggageses(Set baggageses) {
-		this.baggageses = baggageses;
-	}
-
 }

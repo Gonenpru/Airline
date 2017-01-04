@@ -1,9 +1,6 @@
 package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -41,8 +38,6 @@ public class Passengers implements java.io.Serializable {
 	@Column(name="salt")
 	private byte[] salt;
 	
-	private Set ticketses = new HashSet(0);
-
 	public Passengers() {
 	}
 
@@ -50,14 +45,13 @@ public class Passengers implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Passengers(int id, String name, String surname, String email, byte[] password, byte[] salt, Set ticketses) {
+	public Passengers(int id, String name, String surname, String email, byte[] password, byte[] salt) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.password = password;
 		this.salt = salt;
-		this.ticketses = ticketses;
 	}
 
 	public int getId() {
@@ -107,13 +101,4 @@ public class Passengers implements java.io.Serializable {
 	public void setSalt(byte[] salt) {
 		this.salt = salt;
 	}
-
-	public Set getTicketses() {
-		return this.ticketses;
-	}
-
-	public void setTicketses(Set ticketses) {
-		this.ticketses = ticketses;
-	}
-
 }

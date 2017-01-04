@@ -1,8 +1,6 @@
 package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,8 +26,6 @@ public class Manufacturers implements java.io.Serializable {
 	
 	@Column(name="name")
 	private String name;
-	
-	private Set planeModelses = new HashSet(0);
 
 	public Manufacturers() {
 	}
@@ -38,10 +34,9 @@ public class Manufacturers implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Manufacturers(int id, String name, Set planeModelses) {
+	public Manufacturers(int id, String name) {
 		this.id = id;
 		this.name = name;
-		this.planeModelses = planeModelses;
 	}
 
 	public int getId() {
@@ -59,13 +54,4 @@ public class Manufacturers implements java.io.Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Set getPlaneModelses() {
-		return this.planeModelses;
-	}
-
-	public void setPlaneModelses(Set planeModelses) {
-		this.planeModelses = planeModelses;
-	}
-
 }
