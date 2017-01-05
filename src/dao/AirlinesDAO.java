@@ -15,17 +15,13 @@ public class AirlinesDAO extends HibernateUtils{
 	public Airlines add(Airlines airline){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-		System.out.println("ESTA");
-		System.out.println(airline.getEmail());
 		session.save(airline);
-		if (!tx.getStatus().equals(TransactionStatus.ACTIVE)) {
-			tx.commit();
-		}
+		tx.commit();
 		return airline;
 	}
 	
-	public Airlines delete(Long id){
-		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+	public Airlines delete(int id){
+		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		Airlines airline = (Airlines) session.load(Airlines.class, id);
 		if (airline != null){

@@ -17,6 +17,7 @@
 		<s:submit value="Add Airline" align="center" />
 	</s:form>
 
+
 	<s:form action="list" method="post">
 		<s:submit value="Planes List" align="center" />
 	</s:form>

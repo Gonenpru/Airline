@@ -16,7 +16,7 @@ public class AirlinesAction extends ActionSupport {
 	
 	private Airlines airline;
 	private List<Airlines> airlinesList;
-	private Long id;
+	private int id;
 	private AirlinesDAO airlinesDao;
 
 	public AirlinesAction() {
@@ -65,11 +65,11 @@ public class AirlinesAction extends ActionSupport {
 		this.airlinesList = airlinesList;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 }
