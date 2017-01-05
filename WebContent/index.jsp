@@ -1,1 +1,1 @@
-<% response.sendRedirect("jsp/planes.jsp"); %>
+<% response.sendRedirect("airlineManagement.jsp"); %>

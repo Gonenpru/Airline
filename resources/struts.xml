@@ -8,30 +8,37 @@
 	<constant name="struts.devMode" value="false" />
 	<package name="default" extends="struts-default" namespace="/">
 
-		<action name="add"
-			class="action.PlanesAction"
-			method="add">
+		<action name="add" class="action.PlanesAction" method="add">
 			<result name="success">jsp/planes.jsp</result>
 			<result name="input">jsp/planes.jsp</result>
 		</action>
 
-		<action name="delete"
-			class="action.PlanesAction"
-			method="edit">
+		<action name="delete" class="action.PlanesAction" method="edit">
 			<result name="success">jsp/planes.jsp</result>
 			<result name="error">jsp/error.jsp</result>
 		</action>
 
-		<action name="delete"
-			class="action.PlanesAction"
-			method="delete">
+		<action name="delete" class="action.PlanesAction" method="delete">
 			<result name="success">jsp/planes.jsp</result>
 		</action>
 
-		<action name="list"
-			class="action.PlanesAction"
-			method="list">
-			<result name="success">jsp/planes.jsp</result>
+		<!-- <action name="list" -->
+		<!-- class="action.PlanesAction" -->
+		<!-- method="list"> -->
+		<!-- <result name="success">jsp/planes.jsp</result> -->
+		<!-- </action> -->
+
+		<action name="add" class="action.AirlinesAction" method="add">
+			<result name="success">airlineManagement.jsp</result>
+			<result name="input">airlineManagement.jsp</result>
+		</action>
+
+		<action name="delete" class="action.AirlinesAction" method="delete">
+			<result name="success">airlineManagement.jsp</result>
+		</action>
+
+		<action name="list" class="action.AirlinesAction" method="list">
+			<result name="success">airlineManagement.jsp</result>
 		</action>
 	</package>
 </struts>

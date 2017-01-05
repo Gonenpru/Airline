@@ -30,10 +30,7 @@ public class Controllers implements java.io.Serializable {
 	private String email;
 	
 	@Column(name="password")
-	private byte[] password;
-	
-	@Column(name="salt")
-	private byte[] salt;
+	private String password;
 
 	public Controllers() {
 	}
@@ -42,13 +39,12 @@ public class Controllers implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Controllers(int id, String name, String surname, String email, byte[] password, byte[] salt) {
+	public Controllers(int id, String name, String surname, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.password = password;
-		this.salt = salt;
 	}
 
 	public int getId() {
@@ -83,20 +79,11 @@ public class Controllers implements java.io.Serializable {
 		this.email = email;
 	}
 
-	public byte[] getPassword() {
-		return this.password;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPassword(byte[] password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public byte[] getSalt() {
-		return this.salt;
-	}
-
-	public void setSalt(byte[] salt) {
-		this.salt = salt;
-	}
-
 }

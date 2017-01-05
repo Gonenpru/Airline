@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import db_items.Planes;
 import utils.HibernateUtils;
@@ -31,8 +33,8 @@ public class PlanesDAO extends HibernateUtils{
 	
 	@SuppressWarnings("unchecked")
 	public List<Planes> list(){
-		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
-		session.beginTransaction();
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		List<Planes> planes = null;
 		try {
 			planes = (List<Planes>) session.createQuery("from Planes").list();
@@ -40,7 +42,10 @@ public class PlanesDAO extends HibernateUtils{
 			e.printStackTrace();
 			session.getTransaction().rollback();
 		}
-		session.getTransaction().commit();
+		
+		if (!tx.getStatus().equals(TransactionStatus.ACTIVE)) {
+			tx.commit();
+		}
 		return planes;
 	}
 }
