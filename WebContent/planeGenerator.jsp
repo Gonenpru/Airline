@@ -10,19 +10,13 @@
 
 	<h1>Airline</h1>
 	<s:actionerror />
-	<s:form action="add_airline" method="post">
+	<s:form action="add" method="post">
 		<s:textfield name="airline.name" label="Name" />
 		<s:textfield name="airline.email" label="Email" />
 		<s:textfield name="airline.password" label="Password" />
 		<s:submit value="Add Airline" align="center" />
 	</s:form>
 
-	<s:form action="add_model" method="post">
-		<s:textfield name="planeModels.name" label="Name" />
-		<s:textfield name="planeModels.maxPassengers" label="Max p" />
-		<s:textfield name="planeModels.manufacturer_id" label="id" />
-		<s:submit value="Add Model" align="center" />
-	</s:form>
 
 	<s:form action="list" method="post">
 		<s:submit value="Planes List" align="center" />

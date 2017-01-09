@@ -17,6 +17,7 @@ public class AirlinesAction extends ActionSupport {
 	private Airlines airline;
 	private List<Airlines> airlinesList;
 	private int id;
+	private int totalAirlines;
 	private AirlinesDAO airlinesDao;
 
 	public AirlinesAction() {
@@ -25,17 +26,20 @@ public class AirlinesAction extends ActionSupport {
 	
 	public String execute() {
 		this.airlinesList = airlinesDao.list();
+		this.totalAirlines = airlinesDao.list().size();
 		return SUCCESS;
 	}
 	
 	public String add() {
 		try {
 			Airlines airline = getAirline();
+			airline.setId(airlinesDao.list().get(airlinesDao.list().size() - 1).getId() + 1);
 			airlinesDao.add(airline);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.airlinesList = airlinesDao.list();
+		this.totalAirlines = airlinesDao.list().size();
 		return SUCCESS;
 	}
 	
@@ -71,5 +75,13 @@ public class AirlinesAction extends ActionSupport {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getTotalAirlines() {
+		return totalAirlines;
+	}
+
+	public void setTotalAirlines(int totalAirlines) {
+		this.totalAirlines = totalAirlines;
 	}
 }

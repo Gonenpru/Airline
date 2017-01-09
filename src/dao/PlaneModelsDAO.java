@@ -7,44 +7,45 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
-import db_items.Planes;
+import db_items.PlaneModels;
 import utils.HibernateUtils;
 
-public class PlanesDAO extends HibernateUtils{
+public class PlaneModelsDAO extends HibernateUtils{
 
-	public Planes add(Planes plane){
+	public PlaneModels add(PlaneModels planeModels) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.save(plane);
-		session.getTransaction().commit();
-		return plane;
+		Transaction tx = session.beginTransaction();
+		session.save(planeModels);
+		tx.commit();
+		return planeModels;
 	}
 	
-	public Planes delete(int id){
+	public PlaneModels delete(int id){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Planes plane = (Planes) session.load(Planes.class, id);
-		if (plane != null){
-			session.delete(plane);
+		PlaneModels planeModel = (PlaneModels) session.load(PlaneModels.class, id);
+		if (planeModel != null){
+			session.delete(planeModel);
 		}
 		session.getTransaction().commit();
-		return plane;
+		return planeModel;
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Planes> list(){
+	public List<PlaneModels> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-		List<Planes> planes = null;
+		List<PlaneModels> planeModels = null;
 		try {
-			planes = (List<Planes>) session.createQuery("from Planes").list();
+			planeModels = (List<PlaneModels>) session.createQuery("from PlaneModels").list();
 		} catch (HibernateException e){
 			e.printStackTrace();
 			session.getTransaction().rollback();
-		}
+		}	
 		if (!tx.getStatus().equals(TransactionStatus.ACTIVE)) {
-			tx.commit();
+			//tx.commit();
 		}
-		return planes;
+		return planeModels;
 	}
+	
 }

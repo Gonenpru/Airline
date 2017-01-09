@@ -20,26 +20,25 @@ public class PlaneModels implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="Manufacturers")
-	private Manufacturers manufacturers;
+	@Column(name="manufacturer_id")
+	private int manufacturer_id;
 	
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="maxPassengers")
+	@Column(name="max_passengers")
 	private Integer maxPassengers;
 	
 	public PlaneModels() {
 	}
 
-	public PlaneModels(int id, Manufacturers manufacturers) {
+	public PlaneModels(int id) {
 		this.id = id;
-		this.manufacturers = manufacturers;
 	}
 
-	public PlaneModels(int id, Manufacturers manufacturers, String name, Integer maxPassengers) {
+	public PlaneModels(int id, int manufacturer_id, String name, Integer maxPassengers) {
 		this.id = id;
-		this.manufacturers = manufacturers;
+		this.manufacturer_id = manufacturer_id;
 		this.name = name;
 		this.maxPassengers = maxPassengers;
 	}
@@ -52,12 +51,12 @@ public class PlaneModels implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Manufacturers getManufacturers() {
-		return this.manufacturers;
+	public int getManufacturer_id() {
+		return manufacturer_id;
 	}
 
-	public void setManufacturers(Manufacturers manufacturers) {
-		this.manufacturers = manufacturers;
+	public void setManufacturer_id(int manufacturer_id) {
+		this.manufacturer_id = manufacturer_id;
 	}
 
 	public String getName() {

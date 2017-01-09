@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 04-ene-2017 11:51:09 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
-    <class name="db_items.PlaneModels" table="plane_models" schema="public" optimistic-lock="version">
+    <class name="db_items.PlaneModels" table="planemodels" schema="public" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
             <generator class="assigned" />

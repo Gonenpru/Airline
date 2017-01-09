@@ -9,36 +9,72 @@
 	<package name="default" extends="struts-default" namespace="/">
 
 		<action name="add" class="action.PlanesAction" method="add">
-			<result name="success">jsp/planes.jsp</result>
-			<result name="input">jsp/planes.jsp</result>
+			<result name="success">planeGenerator.jsp</result>
+			<result name="input">planeGenerator.jsp</result>
 		</action>
 
-		<action name="delete" class="action.PlanesAction" method="edit">
-			<result name="success">jsp/planes.jsp</result>
-			<result name="error">jsp/error.jsp</result>
+		<action name="edit" class="action.PlanesAction" method="edit">
+			<result name="success">planeGenerator.jsp</result>
 		</action>
 
 		<action name="delete" class="action.PlanesAction" method="delete">
-			<result name="success">jsp/planes.jsp</result>
+			<result name="success">planeGenerator.jsp</result>
 		</action>
 
-		<!-- <action name="list" -->
-		<!-- class="action.PlanesAction" -->
-		<!-- method="list"> -->
-		<!-- <result name="success">jsp/planes.jsp</result> -->
+		<action name="list" class="action.PlanesAction" method="list">
+			<result name="success">planeGenerator.jsp</result>
+		</action>
+
+		<action name="add_model" class="action.PlaneModelsAction" method="add">
+			<result name="success">planeModelEditor.jsp</result>
+			<result name="input">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="execute" class="action.PlaneModelsAction" method="execute">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="delete_model" class="action.PlaneModelsAction" method="delete">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="list" class="action.PlaneModelsAction" method="list">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<!-- MANUFACTURERS -->
+		<action name="add" class="action.ManufacturersAction" method="add">
+			<result name="success">planeModelEditor.jsp</result>
+			<result name="input">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="executeManufacturer" class="action.ManufacturersAction" method="execute">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="delete" class="action.ManufacturersAction" method="delete">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="list" class="action.ManufacturersAction" method="list">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+<!-- 		<action name="execute" class="action.AirlinesAction" method="execute">  -->
+<!-- 		<result name="success">index.jsp</result>  -->
+<!-- 		</action>  -->
+
+<!-- 		<action name="add_airline" class="action.AirlinesAction" method="add">  -->
+<!-- 		<result name="success">airlineManagement.jsp</result>  -->
+<!-- 		<result name="input">airlineManagement.jsp</result> -->
+<!-- 		</action>  -->
+
+		<!-- <action name="delete" class="action.AirlinesAction" method="delete"> -->
+		<!-- <result name="success">airlineManagement.jsp</result> -->
 		<!-- </action> -->
 
-		<action name="add" class="action.AirlinesAction" method="add">
-			<result name="success">airlineManagement.jsp</result>
-			<result name="input">airlineManagement.jsp</result>
-		</action>
-
-		<action name="delete" class="action.AirlinesAction" method="delete">
-			<result name="success">airlineManagement.jsp</result>
-		</action>
-
-		<action name="list" class="action.AirlinesAction" method="list">
-			<result name="success">airlineManagement.jsp</result>
-		</action>
+		<!-- <action name="list" class="action.AirlinesAction" method="list"> -->
+		<!-- <result name="success">airlineManagement.jsp</result> -->
+		<!-- </action> -->
 	</package>
 </struts>

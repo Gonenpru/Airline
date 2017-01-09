@@ -7,44 +7,44 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
-import db_items.Airlines;
+import db_items.Manufacturers;
 import utils.HibernateUtils;
 
-public class AirlinesDAO extends HibernateUtils{
-	
-	public Airlines add(Airlines airline){
+public class ManufacturerDAO extends HibernateUtils{
+
+	public Manufacturers add(Manufacturers manufacturer) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(airline);
+		session.save(manufacturer);
 		tx.commit();
-		return airline;
+		return manufacturer;
 	}
 	
-	public Airlines delete(int id){
+	public Manufacturers delete(int id){
 		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.beginTransaction();
-		Airlines airline = (Airlines) session.load(Airlines.class, id);
-		if (airline != null){
-			session.delete(airline);
+		Transaction tx = session.beginTransaction();
+		Manufacturers manufacturer = (Manufacturers) session.load(Manufacturers.class, id);
+		if (manufacturer != null){
+			session.delete(manufacturer);
 		}
-		session.getTransaction().commit();
-		return airline;
+		tx.commit();
+		return manufacturer;
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Airlines> list(){
+	public List<Manufacturers> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-		List<Airlines> airlines = null;
+		List<Manufacturers> manufacturers = null;
 		try {
-			airlines = (List<Airlines>) session.createQuery("from Airlines").list();
+			manufacturers = (List<Manufacturers>) session.createQuery("from Manufacturers").list();
 		} catch (HibernateException e){
 			e.printStackTrace();
 			session.getTransaction().rollback();
 		}	
 		if (!tx.getStatus().equals(TransactionStatus.ACTIVE)) {
-			tx.commit();
+			//tx.commit();
 		}
-		return airlines;
+		return manufacturers;
 	}
 }

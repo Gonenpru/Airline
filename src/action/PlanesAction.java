@@ -16,7 +16,8 @@ public class PlanesAction extends ActionSupport {
 	
 	private Planes plane;
 	private List<Planes> planesList;
-	private Long id;
+	private int id;
+	private int totalPlanes;
 	private PlanesDAO planesDao;
 
 	public PlanesAction() {
@@ -25,17 +26,20 @@ public class PlanesAction extends ActionSupport {
 	
 	public String execute() {
 		this.planesList = planesDao.list();
+		this.totalPlanes = planesList.size();
 		return SUCCESS;
 	}
 	
 	public String add() {
 		try {
 			Planes plane = getPlane();
+			plane.setId(planesDao.list().get(planesDao.list().size() - 1).getId() + 1);
 			planesDao.add(plane);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.planesList = planesDao.list();
+		this.totalPlanes = planesList.size();
 		return SUCCESS;
 	}
 	
@@ -65,11 +69,19 @@ public class PlanesAction extends ActionSupport {
 		this.planesList = planesList;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getTotalPlanes() {
+		return totalPlanes;
+	}
+
+	public void setTotalPlanes(int totalPlanes) {
+		this.totalPlanes = totalPlanes;
 	}
 }
