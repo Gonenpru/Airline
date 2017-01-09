@@ -20,8 +20,8 @@ public class Routes implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="airlines")
-	private Airlines airlines;
+	@Column(name="Airline_id")
+	private int airline_id;
 	
 	@Column(name="detination")
 	private String detination;
@@ -38,14 +38,10 @@ public class Routes implements java.io.Serializable {
 	public Routes() {
 	}
 
-	public Routes(int id, Airlines airlines) {
-		this.id = id;
-		this.airlines = airlines;
-	}
 
-	public Routes(int id, Airlines airlines, String detination, String origin, String departure, String arrival) {
+	public Routes(int id, int airlines, String detination, String origin, String departure, String arrival) {
 		this.id = id;
-		this.airlines = airlines;
+		this.airline_id = airlines;
 		this.detination = detination;
 		this.origin = origin;
 		this.departure = departure;
@@ -61,12 +57,13 @@ public class Routes implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Airlines getAirlines() {
-		return this.airlines;
+	public int getAirline_id() {
+		return airline_id;
 	}
 
-	public void setAirlines(Airlines airlines) {
-		this.airlines = airlines;
+
+	public void setAirline_id(int airline_id) {
+		this.airline_id = airline_id;
 	}
 
 	public String getDetination() {

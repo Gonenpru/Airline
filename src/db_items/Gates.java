@@ -23,8 +23,8 @@ public class Gates implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 
-	@Column(name="terminals")
-	private Terminals terminals;
+	@Column(name="Terminal_id")
+	private int terminal_id;
 	
 	@Column(name="name")
 	private String name;
@@ -32,14 +32,14 @@ public class Gates implements java.io.Serializable {
 	public Gates() {
 	}
 
-	public Gates(int id, Terminals terminals) {
+	public Gates(int id, int terminals) {
 		this.id = id;
-		this.terminals = terminals;
+		this.terminal_id = terminals;
 	}
 
-	public Gates(int id, Terminals terminals, String name) {
+	public Gates(int id, int terminals, String name) {
 		this.id = id;
-		this.terminals = terminals;
+		this.terminal_id = terminals;
 		this.name = name;
 	}
 
@@ -50,13 +50,13 @@ public class Gates implements java.io.Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public Terminals getTerminals() {
-		return this.terminals;
+	
+	public int getTerminal_id() {
+		return terminal_id;
 	}
 
-	public void setTerminals(Terminals terminals) {
-		this.terminals = terminals;
+	public void setTerminal_id(int terminal_id) {
+		this.terminal_id = terminal_id;
 	}
 
 	public String getName() {

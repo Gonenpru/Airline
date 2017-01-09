@@ -25,17 +25,17 @@ public class Flights implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="baggages")
-	private Baggages baggages;
+	@Column(name="Baggage_id")
+	private int baggage_id;
 	
-	@Column(name="gates")
-	private Gates gates;
+	@Column(name="Gate_id")
+	private int gate_id;
 	
-	@Column(name="planes")
-	private Planes planes;
+	@Column(name="Plane_id")
+	private int plane_id;
 	
-	@Column(name="routes")
-	private Routes routes;
+	@Column(name="Route_id")
+	private int route_id;
 	
 	@Column(name="duration")
 	private Integer duration;
@@ -53,21 +53,21 @@ public class Flights implements java.io.Serializable {
 	public Flights() {
 	}
 
-	public Flights(int id, Baggages baggages, Gates gates, Planes planes, Routes routes) {
+	public Flights(int id, int baggages, int gates, int planes, int routes) {
 		this.id = id;
-		this.baggages = baggages;
-		this.gates = gates;
-		this.planes = planes;
-		this.routes = routes;
+		this.baggage_id = baggages;
+		this.gate_id = gates;
+		this.plane_id = planes;
+		this.route_id = routes;
 	}
 
-	public Flights(int id, Baggages baggages, Gates gates, Planes planes, Routes routes, Integer duration,
+	public Flights(int id, int baggages, int gates, int planes, int routes, Integer duration,
 			Integer delay, Date dateDeparture, Date dateArrival) {
 		this.id = id;
-		this.baggages = baggages;
-		this.gates = gates;
-		this.planes = planes;
-		this.routes = routes;
+		this.baggage_id = baggages;
+		this.gate_id = gates;
+		this.plane_id = planes;
+		this.route_id = routes;
 		this.duration = duration;
 		this.delay = delay;
 		this.dateDeparture = dateDeparture;
@@ -82,36 +82,36 @@ public class Flights implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Baggages getBaggages() {
-		return this.baggages;
+	public int getBaggage_id() {
+		return baggage_id;
 	}
 
-	public void setBaggages(Baggages baggages) {
-		this.baggages = baggages;
+	public void setBaggage_id(int baggage_id) {
+		this.baggage_id = baggage_id;
 	}
 
-	public Gates getGates() {
-		return this.gates;
+	public int getGate_id() {
+		return gate_id;
 	}
 
-	public void setGates(Gates gates) {
-		this.gates = gates;
+	public void setGate_id(int gate_id) {
+		this.gate_id = gate_id;
 	}
 
-	public Planes getPlanes() {
-		return this.planes;
+	public int getPlane_id() {
+		return plane_id;
 	}
 
-	public void setPlanes(Planes planes) {
-		this.planes = planes;
+	public void setPlane_id(int plane_id) {
+		this.plane_id = plane_id;
 	}
 
-	public Routes getRoutes() {
-		return this.routes;
+	public int getRoute_id() {
+		return route_id;
 	}
 
-	public void setRoutes(Routes routes) {
-		this.routes = routes;
+	public void setRoute_id(int route_id) {
+		this.route_id = route_id;
 	}
 
 	public Integer getDuration() {

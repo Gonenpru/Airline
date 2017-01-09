@@ -20,11 +20,11 @@ public class Tickets implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="flights")
-	private Flights flights;
+	@Column(name="Flight_id")
+	private int flight_id;
 	
-	@Column(name="passengers")
-	private Passengers passengers;
+	@Column(name="Passenger_id")
+	private int passenger_id;
 	
 	@Column(name="code")
 	private String code;
@@ -32,16 +32,10 @@ public class Tickets implements java.io.Serializable {
 	public Tickets() {
 	}
 
-	public Tickets(int id, Flights flights, Passengers passengers) {
+	public Tickets(int id, int flights, int passengers, String code) {
 		this.id = id;
-		this.flights = flights;
-		this.passengers = passengers;
-	}
-
-	public Tickets(int id, Flights flights, Passengers passengers, String code) {
-		this.id = id;
-		this.flights = flights;
-		this.passengers = passengers;
+		this.flight_id = flights;
+		this.passenger_id = passengers;
 		this.code = code;
 	}
 
@@ -53,20 +47,20 @@ public class Tickets implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Flights getFlights() {
-		return this.flights;
+	public int getFlight_id() {
+		return flight_id;
 	}
 
-	public void setFlights(Flights flights) {
-		this.flights = flights;
+	public void setFlight_id(int flight_id) {
+		this.flight_id = flight_id;
 	}
 
-	public Passengers getPassengers() {
-		return this.passengers;
+	public int getPassenger_id() {
+		return passenger_id;
 	}
 
-	public void setPassengers(Passengers passengers) {
-		this.passengers = passengers;
+	public void setPassenger_id(int passenger_id) {
+		this.passenger_id = passenger_id;
 	}
 
 	public String getCode() {

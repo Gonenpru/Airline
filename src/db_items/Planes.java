@@ -20,23 +20,23 @@ public class Planes implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="airlines")
-	private Airlines airlines;
+	@Column(name="Airline_id")
+	private int airline_id;
 	
-	@Column(name="planeModels")
-	private PlaneModels planeModels;
+	@Column(name="Plane_Model_id")
+	private int planeModel_id;
 	
-	@Column(name="planeStatus")
-	private PlaneStatus planeStatus;
+	@Column(name="Plane_Status_id")
+	private int planeStatu_id;
 
 	public Planes() {
 	}
 
-	public Planes(int id, Airlines airlines, PlaneModels planeModels, PlaneStatus planeStatus) {
+	public Planes(int id, int airlines, int planeModels, int planeStatus) {
 		this.id = id;
-		this.airlines = airlines;
-		this.planeModels = planeModels;
-		this.planeStatus = planeStatus;
+		this.airline_id = airlines;
+		this.planeModel_id = planeModels;
+		this.planeStatu_id = planeStatus;
 	}
 
 	public int getId() {
@@ -47,27 +47,27 @@ public class Planes implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Airlines getAirlines() {
-		return this.airlines;
+	public int getAirline_id() {
+		return airline_id;
 	}
 
-	public void setAirlines(Airlines airlines) {
-		this.airlines = airlines;
+	public void setAirline_id(int airline_id) {
+		this.airline_id = airline_id;
 	}
 
-	public PlaneModels getPlaneModels() {
-		return this.planeModels;
+	public int getPlaneModel_id() {
+		return planeModel_id;
 	}
 
-	public void setPlaneModels(PlaneModels planeModels) {
-		this.planeModels = planeModels;
+	public void setPlaneModel_id(int planeModel_id) {
+		this.planeModel_id = planeModel_id;
 	}
 
-	public PlaneStatus getPlaneStatus() {
-		return this.planeStatus;
+	public int getPlaneStatu_id() {
+		return planeStatu_id;
 	}
 
-	public void setPlaneStatus(PlaneStatus planeStatus) {
-		this.planeStatus = planeStatus;
+	public void setPlaneStatu_id(int planeStatu_id) {
+		this.planeStatu_id = planeStatu_id;
 	}
 }

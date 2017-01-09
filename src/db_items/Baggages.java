@@ -23,8 +23,8 @@ public class Baggages implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="terminals")
-	private Terminals terminals;
+	@Column(name="Terminal_id")
+	private int terminal_id;
 	
 	@Column(name="name")
 	private String name;
@@ -32,14 +32,14 @@ public class Baggages implements java.io.Serializable {
 	public Baggages() {
 	}
 
-	public Baggages(int id, Terminals terminals) {
+	public Baggages(int id, int terminal_id) {
 		this.id = id;
-		this.terminals = terminals;
+		this.terminal_id = terminal_id;
 	}
 
-	public Baggages(int id, Terminals terminals, String name) {
+	public Baggages(int id, int terminal_id, String name) {
 		this.id = id;
-		this.terminals = terminals;
+		this.terminal_id = terminal_id;
 		this.name = name;
 	}
 
@@ -51,12 +51,12 @@ public class Baggages implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Terminals getTerminals() {
-		return this.terminals;
+	public int getTerminals() {
+		return this.terminal_id;
 	}
 
-	public void setTerminals(Terminals terminals) {
-		this.terminals = terminals;
+	public void setTerminals(int terminal_id) {
+		this.terminal_id = terminal_id;
 	}
 
 	public String getName() {
