@@ -62,6 +62,10 @@
 			<result name="success">flightGenerator.jsp</result>
 			<result name="input">flightGenerator.jsp</result>
 		</action>
+		
+		<action name="delete_flight" class="action.FlightsAction" method="delete">
+			<result name="success">flightTable.jsp</result>
+		</action>
 
 		<!-- MENU ITEMS -->
 		<action name="execute_flight" class="action.FlightsAction" method="execute">

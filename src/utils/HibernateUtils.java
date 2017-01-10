@@ -7,8 +7,12 @@ public class HibernateUtils {
 
 	private static SessionFactory sessionFactory;
 	
-	static {
+	public static void start() {
 		sessionFactory = new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
+	}
+	
+	public static void stop() {
+		sessionFactory.close();
 	}
 
 	public static SessionFactory getSessionFactory() {

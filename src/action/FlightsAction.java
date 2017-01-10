@@ -36,6 +36,7 @@ public class FlightsAction extends ActionSupport {
 			Flights flights = getFlights();
 			flights.setId(flightsDao.list().get(flightsDao.list().size() - 1).getId() + 1);
 			flights.setDelay(new Date());
+			flights.setDateDeparture(flights.getDatePlus());
 			flightsDao.add(flights);
 			
 		} catch (Exception e) {

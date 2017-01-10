@@ -78,10 +78,25 @@
 					<span class="icon-case"><i class="fa fa-building-o"></i></span> 
 					<s:textfield type="number" name="flights.gate_id" /> 
 				</div>
+				
+				<div class="form-group">
+					<p>
+						Departure date <span>*</span>
+					</p>
 
+					<span class="icon-case"><i class="fa fa-calendar-o"></i></span>						
+					<s:textfield type="date" name="flights.d_Departure" />
+				</div>	
+				
+				<div class="form-group">
+					<p>
+						Departure time <span>*</span>
+					</p>
 
-
-
+					<span class="icon-case"><i class="fa fa-clock-o"></i></span>						
+					<s:textfield type="time" name="flights.d_Time" />
+				</div>	
+	
 			</div>
 
 			<div class="rightcontact">
@@ -102,25 +117,17 @@
 					<s:textfield type="number" name="flights.route_id" />
 				</div>
 
-					<div class="form-group">
+				<div class="form-group">
 					<p>
 						 Duration <span>*</span>
 					</p>
 					<span class="icon-case"><i class="fa fa-clock-o"></i></span>
 					<s:textfield type="time" name="flights.duration"/>
 				</div>
-
-					<div class="form-group">
-						<p>
-							Departure date <span>*</span>
-						</p>
-						
-						<span class="icon-case"><i class="fa fa-calendar-o"></i></span>
-						<s:textfield type="date" name="flights.duration"/>
-					</div>
+		
 			</div>
 		</div>
-		<s:submit value="Send" cssClass="bouton-contact" theme="simple"/>
+		<s:submit value="Send" class="bouton-contact"/>
 	</s:form>
 	</div> 
 

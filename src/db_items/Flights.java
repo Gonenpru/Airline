@@ -20,6 +20,8 @@ public class Flights implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static Date d_Departure = new Date();
+	private static Date d_Time = new Date();
 	
 	@Id
 	@Column(name="id")
@@ -46,6 +48,7 @@ public class Flights implements java.io.Serializable {
 	@Column(name="date_departure")
 	private Date dateDeparture;
 	
+
 
 	public Flights() {
 	}
@@ -132,5 +135,11 @@ public class Flights implements java.io.Serializable {
 
 	public void setDateDeparture(Date dateDeparture) {
 		this.dateDeparture = dateDeparture;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public Date getDatePlus(){
+		long sum = d_Departure.getTime() + d_Time.getHours() + d_Time.getMinutes() + d_Time.getSeconds();
+		return new Date(sum);
 	}
 }

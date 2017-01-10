@@ -95,7 +95,7 @@
 									<td><s:property value="duration" /></td>
 									<td><s:property value="delay" /></td>
 									<td><s:property value="dateDeparture" /></td>
-									<td><a href="delete_model?id=<s:property value="id"/>">Delete</a></td>
+									<td><a href="delete_flight?id=<s:property value="id"/>">Delete</a></td>
 								</tr>
 							</s:iterator>
 						</tbody>
