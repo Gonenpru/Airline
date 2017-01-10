@@ -30,9 +30,7 @@
 			<result name="input">planeModelEditor.jsp</result>
 		</action>
 
-		<action name="execute" class="action.PlaneModelsAction" method="execute">
-			<result name="success">planeModelEditor.jsp</result>
-		</action>
+
 
 		<action name="delete_model" class="action.PlaneModelsAction" method="delete">
 			<result name="success">planeModelEditor.jsp</result>
@@ -60,6 +58,31 @@
 			<result name="success">planeModelEditor.jsp</result>
 		</action>
 
+		<action name="add_flight" class="action.FlightsAction" method="add">
+			<result name="success">flightGenerator.jsp</result>
+			<result name="input">flightGenerator.jsp</result>
+		</action>
+
+		<!-- MENU ITEMS -->
+		<action name="execute_flight" class="action.FlightsAction" method="execute">
+			<result name="success">flightGenerator.jsp</result>
+		</action>
+	
+		<action name="execute_plane" class="action.PlanesAction" method="execute">
+			<result name="success">planeGenerator.jsp</result>
+		</action>
+		
+		<action name="execute_model" class="action.PlaneModelsAction" method="execute">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+		
+		<!-- MENU FLIGHTS -->
+		<action name="execute_flight_table" class="action.FlightsAction" method="execute">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+
+		
 <!-- 		<action name="execute" class="action.AirlinesAction" method="execute">  -->
 <!-- 		<result name="success">index.jsp</result>  -->
 <!-- 		</action>  -->

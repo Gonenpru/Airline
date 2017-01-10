@@ -25,30 +25,27 @@ public class Flights implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="Baggage_id")
+	@Column(name="baggage_id")
 	private int baggage_id;
 	
-	@Column(name="Gate_id")
+	@Column(name="gate_id")
 	private int gate_id;
 	
-	@Column(name="Plane_id")
+	@Column(name="plane_id")
 	private int plane_id;
 	
-	@Column(name="Route_id")
+	@Column(name="route_id")
 	private int route_id;
 	
 	@Column(name="duration")
-	private Integer duration;
+	private Date duration;
 	
 	@Column(name="delay")
-	private Integer delay;
+	private Date delay;
 	
-	@Column(name="dateDeparture")
+	@Column(name="date_departure")
 	private Date dateDeparture;
 	
-	@Column(name="dateArrival")
-	private Date dateArrival;
-
 
 	public Flights() {
 	}
@@ -61,8 +58,8 @@ public class Flights implements java.io.Serializable {
 		this.route_id = routes;
 	}
 
-	public Flights(int id, int baggages, int gates, int planes, int routes, Integer duration,
-			Integer delay, Date dateDeparture, Date dateArrival) {
+	public Flights(int id, int baggages, int gates, int planes, int routes, Date duration,
+			Date delay, Date dateDeparture) {
 		this.id = id;
 		this.baggage_id = baggages;
 		this.gate_id = gates;
@@ -71,7 +68,6 @@ public class Flights implements java.io.Serializable {
 		this.duration = duration;
 		this.delay = delay;
 		this.dateDeparture = dateDeparture;
-		this.dateArrival = dateArrival;
 	}
 
 	public int getId() {
@@ -114,19 +110,19 @@ public class Flights implements java.io.Serializable {
 		this.route_id = route_id;
 	}
 
-	public Integer getDuration() {
+	public Date getDuration() {
 		return this.duration;
 	}
 
-	public void setDuration(Integer duration) {
+	public void setDuration(Date duration) {
 		this.duration = duration;
 	}
 
-	public Integer getDelay() {
+	public Date getDelay() {
 		return this.delay;
 	}
 
-	public void setDelay(Integer delay) {
+	public void setDelay(Date delay) {
 		this.delay = delay;
 	}
 
@@ -136,13 +132,5 @@ public class Flights implements java.io.Serializable {
 
 	public void setDateDeparture(Date dateDeparture) {
 		this.dateDeparture = dateDeparture;
-	}
-
-	public Date getDateArrival() {
-		return this.dateArrival;
-	}
-
-	public void setDateArrival(Date dateArrival) {
-		this.dateArrival = dateArrival;
 	}
 }

@@ -112,13 +112,11 @@
 						<s:form action="add" method="post">
 							<fieldset>
 								<legend> <span class="number">1</span> Edit a Model </legend>
-								<s:select headerKey="-1" headerValue="Select the Model *" 
-								list="planeModelsList" name="planeModels.manufacturer_id" 
-								listValue="name" value="id" required="true"/>
+ 								<s:select headerKey="-1" headerValue="Select the Model *" 
+ 								list="planeModelsList"   
+								listValue="name" name="planeModels.manufacturer_id"  required="true"/> 
 								<s:textfield name="planeModels.name" placeholder="New Name *"/>
 								<s:textfield name="planeModels.maxPassengers" placeholder="Max Passengers *"/>
-<%-- 								<s:select headerKey="-1" headerValue="Select the Manufacturer *" list="manufacturersList_model" name="id" />   --%>
-
 							</fieldset>
 							<s:submit class="input-style" value="Edit" />
 						</s:form>

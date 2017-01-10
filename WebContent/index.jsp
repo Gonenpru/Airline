@@ -43,11 +43,9 @@
 		</div>
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><a href="planeGenerator.jsp"><i class="fa fa-plane" style="color:white"></i><span>Dashboard</span></a></li>
-				
-				<li><s:form action="execute" method="post">
-				<input type="submit" class="grey-plane" value="&#xf072;" />
-				</s:form></li>
+				<li><s:a name="action" value="execute_flight"><i class="fa fa-globe" ></i><span>Flights</span></s:a></li>
+				<li><s:a name="action" value="execute_plane"><i class="fa fa-plane" style="color:white"></i><span>Planes</span></s:a></li>
+				<li><s:a name="action" value="execute_model"><i class="fa fa-plane" ></i><span>Models</span></s:a></li>
 			</ul>
 		</div>
 	</div>

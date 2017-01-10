@@ -2,9 +2,11 @@ package prueba;
 
 import java.util.List;
 
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureQuery;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import db_items.*;
 import utils.HibernateUtils;
@@ -12,19 +14,24 @@ import utils.HibernateUtils;
 public class prueba {
 
 	private static Session session;
-	/*
-	public static void main(String[] args) {
-		session = HibernateUtils.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
-		byte[] CDRIVES = hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");
-		//session.save(new Airlines(2,"a","a",CDRIVES,CDRIVES));
-		
-		readPlanes();
-		//tx.commit();
-		session.close();
-		//readPlanes();
-	}
-	*/
+	
+//	public static void main(String[] args) {
+//		session = HibernateUtils.getSessionFactory().openSession();
+//	
+//		StoredProcedureQuery query = (StoredProcedureQuery) session.createStoredProcedureCall("createairline");
+//		query.registerStoredProcedureParameter("name", String.class, ParameterMode.IN);
+//		query.registerStoredProcedureParameter("email", String.class, ParameterMode.IN);
+//		query.registerStoredProcedureParameter("password", String.class, ParameterMode.IN);
+//		query.setParameter("name", "BWIN");
+//		query.setParameter("email", "BWIN");
+//		query.setParameter("password", "BWIN");
+//		query.execute();
+//	
+//		//tx.commit();
+//		session.close();
+//		//readPlanes();
+//	}
+	
 	
 	public static byte[] hexStringToByteArray(String s) {
 	    int len = s.length();
