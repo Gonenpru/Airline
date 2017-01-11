@@ -36,7 +36,6 @@ public class FlightsAction extends ActionSupport {
 		return ERROR;
 	}
 	
-	@SuppressWarnings("deprecation")
 	public String add(){
 		System.out.println("Add Flight");
 		try{
@@ -45,9 +44,11 @@ public class FlightsAction extends ActionSupport {
 			flights.setDelay(new Date());
 			
 			// DEPARTURE DATE
+		
 			d_Time = flights.getD_Time();
 			System.out.println(d_Time);
 			Date time = formatter.parse(d_Time);
+			System.out.println(time.getHours());
 			long sum = flights.getD_Departure().getTime() + time.getTime();
 			flights.setDateDeparture(new Date(sum));
 			

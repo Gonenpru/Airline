@@ -38,10 +38,6 @@
 		</action>
 		
 
-
-
-
-
 		<!-- MANUFACTURERS -->
 		<action name="add" class="action.ManufacturersAction" method="add">
 			<result name="success">planeModelEditor.jsp</result>
