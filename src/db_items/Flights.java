@@ -1,6 +1,7 @@
 package db_items;
 // Generated 04-ene-2017 11:51:08 by Hibernate Tools 5.1.0.Alpha1
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -30,9 +31,6 @@ public class Flights implements java.io.Serializable {
 	
 	@Transient
 	private String d_Time;
-
-	@Transient
-	private String d_Duration;
 	
 	@Id
 	@Column(name="id")
@@ -51,13 +49,13 @@ public class Flights implements java.io.Serializable {
 	private int route_id;
 	
 	@Column(name="duration")
-	private Date duration;
+	private String duration;
 	
 	@Column(name="delay")
-	private Date delay;
+	private String delay;
 	
 	@Column(name="date_departure")
-	private Date dateDeparture;
+	private Timestamp dateDeparture;
 	
 	public Flights() {
 	}
@@ -70,8 +68,8 @@ public class Flights implements java.io.Serializable {
 		this.route_id = routes;
 	}
 
-	public Flights(int id, int baggages, int gates, int planes, int routes, Date duration,
-			Date delay, Date dateDeparture) {
+	public Flights(int id, int baggages, int gates, int planes, int routes, String duration,
+			String delay, Timestamp dateDeparture) {
 		this.id = id;
 		this.baggage_id = baggages;
 		this.gate_id = gates;
@@ -122,27 +120,27 @@ public class Flights implements java.io.Serializable {
 		this.route_id = route_id;
 	}
 
-	public Date getDuration() {
+	public String getDuration() {
 		return this.duration;
 	}
 
-	public void setDuration(Date duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 
-	public Date getDelay() {
+	public String getDelay() {
 		return this.delay;
 	}
 
-	public void setDelay(Date delay) {
+	public void setDelay(String delay) {
 		this.delay = delay;
 	}
 
-	public Date getDateDeparture() {
+	public Timestamp getDateDeparture() {
 		return this.dateDeparture;
 	}
 
-	public void setDateDeparture(Date dateDeparture) {
+	public void setDateDeparture(Timestamp dateDeparture) {
 		this.dateDeparture = dateDeparture;
 	}
 
@@ -160,13 +158,5 @@ public class Flights implements java.io.Serializable {
 
 	public void setD_Time(String d_Time) {
 		this.d_Time = d_Time;
-	}
-
-	public  String getD_Duration() {
-		return d_Duration;
-	}
-
-	public void setD_Duration(String D_duration) {
-		this.d_Duration = D_duration;
 	}
 }

@@ -1,7 +1,8 @@
 package action;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,9 +20,6 @@ public class FlightsAction extends ActionSupport {
 	private List<Flights> flightsList;
 	private FlightsDAO flightsDao;
 	private int id;
-	private SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
-	private String d_Time;
-	private String d_Duration;
 	
 	public FlightsAction(){
 		flightsDao = new FlightsDAO();
@@ -41,23 +39,15 @@ public class FlightsAction extends ActionSupport {
 		try{
 			Flights flights = getFlights();
 			flights.setId(flightsDao.list().get(flightsDao.list().size() - 1).getId() + 1);
-			flights.setDelay(new Date());
+			flights.setDelay("00:00");
 			
 			// DEPARTURE DATE
-		
-			d_Time = flights.getD_Time();
-			System.out.println(d_Time);
-			Date time = formatter.parse(d_Time);
-			System.out.println(time.getHours());
-			long sum = flights.getD_Departure().getTime() + time.getTime();
-			flights.setDateDeparture(new Date(sum));
-			
-			// DURATION DATE
-			d_Duration = flights.getD_Duration();
-			System.out.println(d_Duration);
-			Date duration = formatter.parse(d_Duration);
-			flights.setDuration(duration);
-
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			String reportDate = df.format(flights.getD_Departure());
+			reportDate = reportDate.concat(" "+flights.getD_Time()+":00");
+			Timestamp ts = Timestamp.valueOf(reportDate);
+			flights.setDateDeparture(ts);
+				
 			flightsDao.add(flights);
 			
 		} catch (Exception e) {

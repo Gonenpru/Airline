@@ -26,7 +26,7 @@
         <property name="delay" type="date">
             <column name="delay" />
         </property>
-        <property name="dateDeparture" type="date">
+        <property name="dateDeparture" type="timestamp">
             <column name="date_departure" length="13" />
         </property>
 
