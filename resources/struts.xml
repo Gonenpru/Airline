@@ -8,37 +8,39 @@
 	<constant name="struts.devMode" value="false" />
 	<package name="default" extends="struts-default" namespace="/">
 
-		<action name="add" class="action.PlanesAction" method="add">
-			<result name="success">planeGenerator.jsp</result>
-			<result name="input">planeGenerator.jsp</result>
-		</action>
 
-		<action name="edit" class="action.PlanesAction" method="edit">
-			<result name="success">planeGenerator.jsp</result>
-		</action>
-
-		<action name="delete" class="action.PlanesAction" method="delete">
-			<result name="success">planeGenerator.jsp</result>
-		</action>
-
-		<action name="list" class="action.PlanesAction" method="list">
-			<result name="success">planeGenerator.jsp</result>
-		</action>
-
+		<!-- FLIGHT MODEL -->
 		<action name="add_model" class="action.PlaneModelsAction" method="add">
 			<result name="success">planeModelEditor.jsp</result>
 			<result name="input">planeModelEditor.jsp</result>
 		</action>
-
-
-
+		
 		<action name="delete_model" class="action.PlaneModelsAction" method="delete">
 			<result name="success">planeModelEditor.jsp</result>
 		</action>
-
+		
 		<action name="list" class="action.PlaneModelsAction" method="list">
 			<result name="success">planeModelEditor.jsp</result>
 		</action>
+		
+		<!-- FLIGHTS -->
+		<action name="add_flight" class="action.FlightsAction" method="add">
+			<result name="success">flightGenerator.jsp</result>
+			<result name="input">flightGenerator.jsp</result>
+		</action>
+		
+		<action name="delete_flight" class="action.FlightsAction" method="delete">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+		<action name="list_flight" class="action.FlightsAction" method="list">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+
+
+
+
 
 		<!-- MANUFACTURERS -->
 		<action name="add" class="action.ManufacturersAction" method="add">
@@ -58,14 +60,6 @@
 			<result name="success">planeModelEditor.jsp</result>
 		</action>
 
-		<action name="add_flight" class="action.FlightsAction" method="add">
-			<result name="success">flightGenerator.jsp</result>
-			<result name="input">flightGenerator.jsp</result>
-		</action>
-		
-		<action name="delete_flight" class="action.FlightsAction" method="delete">
-			<result name="success">flightTable.jsp</result>
-		</action>
 
 		<!-- MENU ITEMS -->
 		<action name="execute_flight" class="action.FlightsAction" method="execute">
@@ -85,23 +79,5 @@
 			<result name="success">flightTable.jsp</result>
 		</action>
 		
-
-		
-<!-- 		<action name="execute" class="action.AirlinesAction" method="execute">  -->
-<!-- 		<result name="success">index.jsp</result>  -->
-<!-- 		</action>  -->
-
-<!-- 		<action name="add_airline" class="action.AirlinesAction" method="add">  -->
-<!-- 		<result name="success">airlineManagement.jsp</result>  -->
-<!-- 		<result name="input">airlineManagement.jsp</result> -->
-<!-- 		</action>  -->
-
-		<!-- <action name="delete" class="action.AirlinesAction" method="delete"> -->
-		<!-- <result name="success">airlineManagement.jsp</result> -->
-		<!-- </action> -->
-
-		<!-- <action name="list" class="action.AirlinesAction" method="list"> -->
-		<!-- <result name="success">airlineManagement.jsp</result> -->
-		<!-- </action> -->
 	</package>
 </struts>

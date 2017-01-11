@@ -1,5 +1,3 @@
-<%-- <% response.sendRedirect("airlineManagement.jsp"); %> --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -31,7 +29,6 @@
 </head>
 
 <body class="sticky-header left-side-collapsed">
-	<section>
 	<div class="left-side sticky-left-side">
 		<div class="logo">
 			<h1>
@@ -122,11 +119,10 @@
 		</div>
 	</div>
 	</div>
-	<footer>
 	<p>
 		&copy 2016 Gonenpru Corporation</a>
 	</p>
-	</footer> </section>
+	</footer>
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/bootstrap.min.js"></script>

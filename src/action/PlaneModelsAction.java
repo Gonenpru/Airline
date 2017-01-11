@@ -41,7 +41,6 @@ public class PlaneModelsAction extends ActionSupport {
 	public String add(){
 		try{
 			PlaneModels planeModels = getPlaneModels();
-			System.out.println("Model" +planeModels);
 			planeModels.setId(planeModelsDao.list().get(planeModelsDao.list().size() - 1).getId() + 1);
 			planeModelsDao.add(planeModels);
 			

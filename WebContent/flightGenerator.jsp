@@ -35,7 +35,7 @@
 </head>
 
 <body class="sticky-header left-side-collapsed">
-	<section>
+
 	<div class="left-side sticky-left-side">
 		<div class="logo">
 			<h1>
@@ -48,22 +48,22 @@
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
 				<li><s:a name="action" value="execute_flight"><i class="fa fa-globe" ></i><span>Flights creation</span></s:a></li>
+				<li><s:a name="action" value="execute_flight_table"><i class="fa fa-pencil-square-o"></i><span>Flights editor</span></s:a></li>
 				<li><s:a name="action" value="execute_flight_table"><i class="fa fa-table"></i><span>History</span></s:a></li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="main-content"> 
- 		<jsp:include page="includes/header_section.jsp" /> 
+ 	<jsp:include page="includes/header_section.jsp" /> 
 	<s:form action="add_flight" method="post" theme="simple">
 		<h1> CREATE A NEW FLIGHT </h1>
-
 		<div class="contentform">
 			<div id="sendmessage">Your message has been sent successfully. Thank you.</div>
 
 			<div class="leftcontact">
 								
-					<div class="form-group">
+				<div class="form-group">
 					<p>
 						Plane <span>*</span>
 					</p>
@@ -94,7 +94,7 @@
 					</p>
 
 					<span class="icon-case"><i class="fa fa-clock-o"></i></span>						
-					<s:textfield type="time" name="flights.d_Time" />
+					<s:textfield name="flights.d_Time" />
 				</div>	
 	
 			</div>
@@ -122,7 +122,7 @@
 						 Duration <span>*</span>
 					</p>
 					<span class="icon-case"><i class="fa fa-clock-o"></i></span>
-					<s:textfield type="time" name="flights.duration"/>
+					<s:textfield name="flights.d_Duration"/>
 				</div>
 		
 			</div>
@@ -135,7 +135,8 @@
 
 	<footer>
 	<p> &copy 2017 Gonenpru Corporation </p>
-	</footer> </section>
+	</footer>
+	
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/bootstrap.min.js"></script>

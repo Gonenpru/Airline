@@ -112,9 +112,10 @@
 						<s:form action="add" method="post">
 							<fieldset>
 								<legend> <span class="number">1</span> Edit a Model </legend>
- 								<s:select headerKey="-1" headerValue="Select the Model *" 
- 								list="planeModelsList"   
-								listValue="name" name="planeModels.manufacturer_id"  required="true"/> 
+<%--  								<s:select headerKey="-1" headerValue="Select the Model *"  --%>
+<%--  								list="planeModelsList"    --%>
+<%-- 								listValue="name" name="planeModels.manufacturer_id"  required="true"/>  --%>
+								<s:textfield name="planeModels.name" placeholder="New Name *"/>
 								<s:textfield name="planeModels.name" placeholder="New Name *"/>
 								<s:textfield name="planeModels.maxPassengers" placeholder="Max Passengers *"/>
 							</fieldset>
@@ -127,10 +128,11 @@
 					<div class="form-style-5">
 						<s:form action="add_model" method="post">
 							<fieldset>
-								<s:select headerKey="-1" headerValue="Select the Manufacturer *" 
-								list="manufacturersList_model" name="planeModels.manufacturer_id" 
-								listValue="name" value="id" required="true"/>
+<%-- 								<s:select headerKey="-1" headerValue="Select the Manufacturer *"  --%>
+<%-- 								list="manufacturersList_model" name="planeModels.manufacturer_id"  --%>
+<%-- 								listValue="name" value="id" required="true"/> --%>
 								<legend> <span class="number">2</span> Create a Model </legend>
+								<s:textfield name="planeModels.manufacturer_id" placeholder="Manufacturer id *"/>
 								<s:textfield name="planeModels.name" placeholder="Plane Model Name *"/>
 								<s:textfield name="planeModels.maxPassengers" placeholder="Max Passengers *"/>
 							</fieldset>

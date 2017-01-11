@@ -1,5 +1,6 @@
 package action;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -18,12 +19,16 @@ public class FlightsAction extends ActionSupport {
 	private List<Flights> flightsList;
 	private FlightsDAO flightsDao;
 	private int id;
+	private SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+	private String d_Time;
+	private String d_Duration;
 	
 	public FlightsAction(){
 		flightsDao = new FlightsDAO();
 	}
 	
 	public String execute(){
+		System.out.println("Execute Flight");
 		if (flightsDao.list() != null) {
 			this.flightsList = flightsDao.list();
 			return SUCCESS;
@@ -31,12 +36,27 @@ public class FlightsAction extends ActionSupport {
 		return ERROR;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public String add(){
+		System.out.println("Add Flight");
 		try{
 			Flights flights = getFlights();
 			flights.setId(flightsDao.list().get(flightsDao.list().size() - 1).getId() + 1);
 			flights.setDelay(new Date());
-			flights.setDateDeparture(flights.getDatePlus());
+			
+			// DEPARTURE DATE
+			d_Time = flights.getD_Time();
+			System.out.println(d_Time);
+			Date time = formatter.parse(d_Time);
+			long sum = flights.getD_Departure().getTime() + time.getTime();
+			flights.setDateDeparture(new Date(sum));
+			
+			// DURATION DATE
+			d_Duration = flights.getD_Duration();
+			System.out.println(d_Duration);
+			Date duration = formatter.parse(d_Duration);
+			flights.setDuration(duration);
+
 			flightsDao.add(flights);
 			
 		} catch (Exception e) {
@@ -78,5 +98,5 @@ public class FlightsAction extends ActionSupport {
 
 	public void setId(int id) {
 		this.id = id;
-	} 
+	}
 }
