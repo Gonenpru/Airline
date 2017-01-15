@@ -11,17 +11,11 @@
         <many-to-one name="planes" class="db_items.Planes" fetch="select">
             <column name="plane_id" not-null="true" />
         </many-to-one>
-        <property name="posx" type="java.lang.Integer">
+        <property name="posx" type="double">
             <column name="posx" />
         </property>
-        <property name="posy" type="java.lang.Integer">
+        <property name="posy" type="double">
             <column name="posy" />
-        </property>
-        <property name="dirx" type="java.lang.Integer">
-            <column name="dirx" />
-        </property>
-        <property name="diry" type="java.lang.Integer">
-            <column name="diry" />
         </property>
     </class>
 </hibernate-mapping>

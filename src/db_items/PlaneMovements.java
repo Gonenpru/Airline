@@ -20,36 +20,28 @@ public class PlaneMovements implements java.io.Serializable {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="planes")
-	private Planes planes;
+	@Column(name="plane_id")
+	private int plane_id;
 	
 	@Column(name="posx")
-	private Integer posx;
+	private Double posx;
 	
 	@Column(name="posy")
-	private Integer posy;
-	
-	@Column(name="dirx")
-	private Integer dirx;
-	
-	@Column(name="diry")
-	private Integer diry;
+	private Double posy;
 
 	public PlaneMovements() {
 	}
 
-	public PlaneMovements(int id, Planes planes) {
+	public PlaneMovements(int id, int plane_id) {
 		this.id = id;
-		this.planes = planes;
+		this.plane_id = plane_id;
 	}
 
-	public PlaneMovements(int id, Planes planes, Integer posx, Integer posy, Integer dirx, Integer diry) {
+	public PlaneMovements(int id, int plane_id, Double posx, Double posy) {
 		this.id = id;
-		this.planes = planes;
+		this.plane_id = plane_id;
 		this.posx = posx;
 		this.posy = posy;
-		this.dirx = dirx;
-		this.diry = diry;
 	}
 
 	public int getId() {
@@ -60,44 +52,27 @@ public class PlaneMovements implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Planes getPlanes() {
-		return this.planes;
+	public int getPlanes() {
+		return this.plane_id;
 	}
 
-	public void setPlanes(Planes planes) {
-		this.planes = planes;
+	public void setPlanes(int plane_id) {
+		this.plane_id = plane_id;
 	}
 
-	public Integer getPosx() {
+	public Double getPosx() {
 		return this.posx;
 	}
 
-	public void setPosx(Integer posx) {
+	public void setPosx(Double posx) {
 		this.posx = posx;
 	}
 
-	public Integer getPosy() {
+	public Double getPosy() {
 		return this.posy;
 	}
 
-	public void setPosy(Integer posy) {
+	public void setPosy(Double posy) {
 		this.posy = posy;
 	}
-
-	public Integer getDirx() {
-		return this.dirx;
-	}
-
-	public void setDirx(Integer dirx) {
-		this.dirx = dirx;
-	}
-
-	public Integer getDiry() {
-		return this.diry;
-	}
-
-	public void setDiry(Integer diry) {
-		this.diry = diry;
-	}
-
 }

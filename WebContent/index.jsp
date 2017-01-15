@@ -15,9 +15,7 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
-<script src="js/Chart.js"></script>
-<link href="css/animate.css" rel="stylesheet" type="text/css"
-	media="all">
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 	
 <link href="css/input-icons.css" rel="stylesheet" type="text/css" >
 <script src="js/wow.min.js"></script>
