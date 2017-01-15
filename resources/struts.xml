@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<package name="default" extends="struts-default" namespace="/">
+
+
+		<!-- FLIGHT MODEL -->
+		<action name="add_model" class="action.PlaneModelsAction" method="add">
+			<result name="success">planeModelEditor.jsp</result>
+			<result name="input">planeModelEditor.jsp</result>
+		</action>
+		
+		<action name="delete_model" class="action.PlaneModelsAction" method="delete">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+		
+		<action name="list" class="action.PlaneModelsAction" method="list">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+		
+		<!-- FLIGHTS -->
+		<action name="add_flight" class="action.FlightsAction" method="add">
+			<result name="success">flightGenerator.jsp</result>
+			<result name="input">flightGenerator.jsp</result>
+		</action>
+		
+		<action name="delete_flight" class="action.FlightsAction" method="delete">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+		<action name="list_flight" class="action.FlightsAction" method="list">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+
+		<!-- MANUFACTURERS -->
+		<action name="add" class="action.ManufacturersAction" method="add">
+			<result name="success">planeModelEditor.jsp</result>
+			<result name="input">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="executeManufacturer" class="action.ManufacturersAction" method="execute">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="delete" class="action.ManufacturersAction" method="delete">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+		<action name="list" class="action.ManufacturersAction" method="list">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+
+
+		<!-- MENU ITEMS -->
+		<action name="execute_flight" class="action.FlightsAction" method="execute">
+			<result name="success">flightGenerator.jsp</result>
+		</action>
+	
+		<action name="execute_plane" class="action.PlanesAction" method="execute">
+			<result name="success">planeGenerator.jsp</result>
+		</action>
+		
+		<action name="execute_model" class="action.PlaneModelsAction" method="execute">
+			<result name="success">planeModelEditor.jsp</result>
+		</action>
+		
+		<!-- MENU FLIGHTS -->
+		<action name="execute_flight_table" class="action.FlightsAction" method="execute">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
+	</package>
+</struts>
