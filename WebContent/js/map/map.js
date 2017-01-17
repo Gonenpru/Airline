@@ -4,18 +4,7 @@ var map;
 var markers = [];
 var move_id = [];
 var positions = [];
-
-/*
-
- {id: data.plane_id, pos:[0, 0] ,coord:[data.posx, data.posy], new: 0} + Movimientos pendientes
-
- update mira el pos
- y cuando acaba si hay Movimientos pendientes en el finish se le pasa el primero a pos
- y se ejecuta de nuevo
-
- Cada update si hay algo en pos introduce en pendientes las coordenadas
-
-*/
+var infowindow = null;
 
 function start() {
   initMap();
@@ -71,12 +60,20 @@ var numDeltas = 100;
 var delay = 100;
 var deltaLat = [];
 var deltaLng = [];
+var icon = '../';
 
 function transition(result, data){
     if (result.new === 0){
       var marker = new google.maps.Marker({
           position: new google.maps.LatLng(result.coord[0],result.coord[1]),
-          map: map
+          map: map,
+          icon: icon
+      });
+      var contentString = '<b>ID : '+result.id+'</b>';
+      infowindow = new google.maps.InfoWindow({ size: new google.maps.Size(150,50) });
+      google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(contentString);
+          infowindow.open(map,marker);
       });
       result.new = 1;
       markers.push(marker);

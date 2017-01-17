@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.FlightsDAO;
+import dao.FlightDao;
 import db_items.Flights;
 
 public class FlightsAction extends ActionSupport {
@@ -18,15 +18,14 @@ public class FlightsAction extends ActionSupport {
 	
 	private Flights flights;
 	private List<Flights> flightsList;
-	private FlightsDAO flightsDao;
+	private FlightDao flightsDao;
 	private int id;
 	
 	public FlightsAction(){
-		flightsDao = new FlightsDAO();
+		flightsDao = new FlightDao();
 	}
 	
 	public String execute(){
-		System.out.println("Execute Flight");
 		if (flightsDao.list() != null) {
 			this.flightsList = flightsDao.list();
 			return SUCCESS;
@@ -35,7 +34,6 @@ public class FlightsAction extends ActionSupport {
 	}
 	
 	public String add(){
-		System.out.println("Add Flight");
 		try{
 			Flights flights = getFlights();
 			flights.setId(flightsDao.list().get(flightsDao.list().size() - 1).getId() + 1);
@@ -56,6 +54,7 @@ public class FlightsAction extends ActionSupport {
 		}
 		return execute();
 	}
+
 	
 	public String delete(){
 		flightsDao.delete(getId());

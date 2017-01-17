@@ -11,12 +11,6 @@
         <many-to-one name="airlines" class="db_items.Airlines" fetch="select">
             <column name="airline_id" not-null="true" />
         </many-to-one>
-        <property name="detination" type="string">
-            <column name="detination" length="45" />
-        </property>
-        <property name="origin" type="string">
-            <column name="origin" length="45" />
-        </property>
         <property name="departure" type="string">
             <column name="departure" length="45" />
         </property>

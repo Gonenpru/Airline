@@ -69,34 +69,22 @@
 
 	<div class="main-content">
 		<jsp:include page="includes/header_section.jsp" />
-		<h1>FLIGHT TABLE</h1>
+		<h1>ROUTES</h1>
 			<div class="contentform">
 					<table id="myTable" class="display" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>Flight</th>
-								<th>Plane</th>
-								<th>Baggage</th>
-								<th>Gate</th>
-								<th>Route</th>
-								<th>Duration</th>
-								<th>Delay</th>
-								<th>Departure</th>
-								<th>Delete</th>
+								<th>Origin</th>
+								<th>Arrival</th>
+								<th>Airline</th>
 							</tr>
 						</thead>
 						<tbody>
-							<s:iterator value="flightsList">
+							<s:iterator value="routesList">
 								<tr>
-									<td><s:property value="id" /></td>
-									<td><s:property value="plane_id" /></td>
-									<td><s:property value="baggage_id" /></td>
-									<td><s:property value="gate_id" /></td>
-									<td><s:property value="route_id" /></td>
-									<td><s:property value="duration" /></td>
-									<td><s:property value="delay" /></td>
-									<td><s:property value="dateDeparture" /></td>
-									<td><a href="delete_flight?id=<s:property value="id"/>">Delete</a></td>
+									<td><s:property value="departure" /></td>
+									<td><s:property value="arrival" /></td>
+									<td><s:property value="airline_id" /></td>
 								</tr>
 							</s:iterator>
 						</tbody>

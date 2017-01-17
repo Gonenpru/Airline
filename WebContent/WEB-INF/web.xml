@@ -17,12 +17,6 @@
 		<listener-class>
 			initialization.InitHibernate
 		</listener-class>
-	</listener>
-	
-	<listener>
-		<listener-class>
-			initialization.InitSocketIO
-		</listener-class>
-	</listener>
-	
+	</listener>	
+
 </web-app>
