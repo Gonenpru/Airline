@@ -7,6 +7,11 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
 	<package name="default" extends="struts-default" namespace="/">
+	
+	<action name="login" class="action.LoginAction" >
+            <result name="success" type="dispatcher">/index.jsp</result>
+            <result name="error" type="redirect">/login.jsp</result>
+        </action>
 
 		<!-- FLIGHTS -->		
 		<action name="delete_flight" class="action.FlightsAction" method="delete">

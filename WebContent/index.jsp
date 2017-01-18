@@ -16,7 +16,8 @@
 <script src="https://use.fontawesome.com/36a53496c3.js"></script>
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-	
+<script src="js/d3.js"></script>
+<script src="js/d3-tip.js"></script>
 <link href="css/input-icons.css" rel="stylesheet" type="text/css" >
 <script src="js/wow.min.js"></script>
 <script>
@@ -54,10 +55,10 @@
 							<i class="fa fa-mail-forward"></i>
 							<div class="stats">
 								<h5>
-									45 <span>%</span>
+									+5 <span>%</span>
 								</h5>
 								<div class="grow">
-									<p>Growth</p>
+									<p>Ticket Value</p>
 								</div>
 							</div>
 						</div>
@@ -67,10 +68,10 @@
 							<i class="fa fa-users"></i>
 							<div class="stats">
 								<h5>
-									<s:property value="totalAirlines" />
+									130,000
 								</h5>
 								<div class="grow grow1">
-									<p>Airlines</p>
+									<p>Clients</p>
 								</div>
 							</div>
 						</div>
@@ -80,10 +81,10 @@
 							<i class="fa fa-eye"></i>
 							<div class="stats">
 								<h5>
-									95.9 <span>%</span>
+									12
 								</h5>
 								<div class="grow grow3">
-									<p>Av. Quality</p>
+									<p>Flights</p>
 								</div>
 							</div>
 						</div>
@@ -93,10 +94,10 @@
 							<i class="fa fa-usd"></i>
 							<div class="stats">
 								<h5>
-									4 <span>$</span>
+									120 <span>$</span>
 								</h5>
 								<div class="grow grow2">
-									<p>Profit</p>
+									<p>Ticket Price</p>
 								</div>
 							</div>
 						</div>
@@ -104,16 +105,51 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="widget_middle">
-				<div class="col-md-6 widget_middle_left">
-					<div class="switch-right-grid" style="height: 400px;"></div>
-				</div>
-				<div class="col-md-6 widget_middle_left">
-					<div class="switch-right-grid" style="height: 400px;">
-						<div class="switch-right-grid1"></div>
+<div class="switches">
+					<div class="col-4">
+						<div class="col-md-4 switch-right">
+							<div class="switch-right-grid" style="height: 425px;">
+								<div class="switch-right-grid1">
+									<h4>TODAY'S STATS</h4>
+									<ul>
+										<li>Earnings: $5,000 USD</li>
+										<li>Tickets Sold: 50 Tickets</li>
+										<li>Ticket Actual Prize: $120 USD</li>
+									</ul>
+								</div>
+								<object type="text/html" data="charts/chart_airline_today.html" width="100%" height="100%"></object>
+							</div>
+						</div>
+						<div class="col-md-4 switch-right">
+							<div class="switch-right-grid" style="height: 425px;">
+								<div class="switch-right-grid1">
+									<h4>WEEKLY STATS</h4>
+									<ul>
+										<li>Earnings: $30,000 USD</li>
+										<li>Tickets Sold: 400 Tickets</li>
+										<li>Last Hour Sales: $2,434 USD</li>
+									</ul>
+								</div>
+
+								<object type="text/html" data="charts/chart_airline_weekly.html" width="100%" height="100%"></object>
+
+							</div>
+						</div>
+						<div class="col-md-4 switch-right">
+							<div class="switch-right-grid" style="height: 425px;">
+								<div class="switch-right-grid1">
+									<h4>MONTHLY STATS</h4>
+									<ul>
+										<li>Earnings: $250,000 USD</li>
+										<li>Tickets Sold: 8,000 Items</li>
+										<li>Last Hour Sales: $75,434 USD</li>
+									</ul>
+								</div>
+								<object type="text/html" data="charts/chart_airline_monthly.html" width="100%" height="100%"></object>
+							</div>			
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 	</div>
