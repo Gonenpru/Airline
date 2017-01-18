@@ -36,10 +36,11 @@ public class PlaneDao extends HibernateUtils {
 		return deleteBrackets(name);
 	}
 
+	@SuppressWarnings("unchecked")
 	public String getPlaneHours(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createSQLQuery("select planeHours(:plane_id)").setInteger("plane_id", id);
+		Query query = session.createSQLQuery("select duration from Flights where plane_id = :plane_id").setInteger("plane_id", id);
 		List<Object> list = query.list();
 		String totHours = getTotHours(list);
 		return totHours;
@@ -47,7 +48,6 @@ public class PlaneDao extends HibernateUtils {
 
 	private String getTotHours(List<Object> list) {
 		// TODO Auto-generated method stub
-		String ret = "";
 		hours = 0;
 		minutes = 0;
 		for (Object obj : list) {
@@ -67,8 +67,8 @@ public class PlaneDao extends HibernateUtils {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		Query query = session.createSQLQuery("select planeFlights(:plane_id)").setInteger("plane_id", id);
-		String val = String.valueOf(query.list());
-		int total = Integer.parseInt(val);
+		Object obj = query.list().get(0);
+		int total = Integer.parseInt(obj.toString());
 		return total;
 	}
 

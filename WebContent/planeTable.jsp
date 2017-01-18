@@ -60,15 +60,16 @@
 		</div>
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><s:a name="action" value="execute_flight"><i class="fa fa-globe" ></i><span>Create</span></s:a></li>
-				<li><s:a name="action" value="execute_flight_table"><i class="fa fa-table"></i><span>History</span></s:a></li>
+				<li><s:a name="action" value="execute_flight"><i class="fa fa-plane" ></i><span>Flights</span></s:a></li>
+				<li><s:a name="action" value="execute_plane"><i class="fa fa-plane" ></i><span>Planes</span></s:a></li>
+				<li><s:a name="action" value="list_routes"><i class="fa fa-globe"></i><span>Routes</span></s:a></li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="main-content">
 		<jsp:include page="includes/header_section.jsp" />
-		<h1>PLANE TABLE</h1>
+		<h1>PLANES INFO</h1>
 			<div class="contentform">
 					<table id="myTable" class="display" cellspacing="0" width="100%">
 						<thead>
