@@ -60,9 +60,8 @@
 		</div>
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><s:a name="action" value="execute_flight"><i class="fa fa-globe" ></i><span>Create</span></s:a></li>
+				<li><s:a name="action" value="execute_flight"><i class="fa fa-plane" ></i><span>Flights</span></s:a></li>
 				<li><s:a name="action" value="list_routes"><i class="fa fa-pencil-square-o"></i><span>Routes</span></s:a></li>
-				<li><s:a name="action" value="execute_flight_table"><i class="fa fa-table"></i><span>History</span></s:a></li>
 			</ul>
 		</div>
 	</div>

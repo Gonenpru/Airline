@@ -54,6 +54,9 @@ public class Flights implements java.io.Serializable {
 	@Column(name="delay")
 	private String delay;
 	
+	@Column(name="stopped")
+	private Boolean stopped;
+	
 	@Column(name="date_departure")
 	private Timestamp dateDeparture;
 	
@@ -69,7 +72,7 @@ public class Flights implements java.io.Serializable {
 	}
 
 	public Flights(int id, int baggages, int gates, int planes, int routes, String duration,
-			String delay, Timestamp dateDeparture) {
+			String delay, Timestamp dateDeparture, Boolean stopped) {
 		this.id = id;
 		this.baggage_id = baggages;
 		this.gate_id = gates;
@@ -78,6 +81,7 @@ public class Flights implements java.io.Serializable {
 		this.duration = duration;
 		this.delay = delay;
 		this.dateDeparture = dateDeparture;
+		this.stopped = stopped;
 	}
 
 	public int getId() {
@@ -159,4 +163,14 @@ public class Flights implements java.io.Serializable {
 	public void setD_Time(String d_Time) {
 		this.d_Time = d_Time;
 	}
+
+	public Boolean getStopped() {
+		return stopped;
+	}
+
+	public void setStopped(Boolean stopped) {
+		this.stopped = stopped;
+	}
+	
+	
 }

@@ -19,6 +19,7 @@ public class RoutesDao extends HibernateUtils {
 		List<Routes> routes = null;
 		try {
 			//Query query = session.createSQLQuery("select * from routes where airline_id = :id").setInteger("id", id);
+
 			routes = (List<Routes>) session.createQuery("from Routes").list();
 			//routes = (List<Routes>) query.list();
 		} catch (HibernateException e){
@@ -27,4 +28,5 @@ public class RoutesDao extends HibernateUtils {
 		}	
 		return routes;
 	}
+
 }
