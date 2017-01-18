@@ -4,12 +4,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.AirlinesDao;
 import db_items.Airlines;
+
 
 
 public class LoginAction extends ActionSupport {
@@ -34,7 +34,7 @@ public class LoginAction extends ActionSupport {
 		}
 		return ERROR;
 	}
-
+	
 	public String logout() throws Exception {
 		//        HttpSession session = ServletActionContext.getRequest().getSession();
 		//        session.removeAttribute("logined");
