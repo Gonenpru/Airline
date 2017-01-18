@@ -1,29 +1,36 @@
 package action;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import dao.AirlinesDao;
+import db_items.Airlines;
+
 
 public class LoginAction extends ActionSupport {
+	
+	AirlinesDao airlinesdao;
+	List<Airlines> airlines;
 
 	private String email;
 	private String password;
 
 	public String execute() throws Exception {
-		if ("admin".equals(email) && "password".equals(password)) {
-			//            HttpSession session = ServletActionContext.getRequest().getSession();
-			//            session.setAttribute("logined","true");
-			//            session.setAttribute("context", new Date());
-			// Better is using ActionContext 
-			Map session = ActionContext.getContext().getSession();
-			session.put("logined","true");
-			session.put("context", new Date());
-			return SUCCESS;
+		airlinesdao = new AirlinesDao();
+		airlines = airlinesdao.list();
+		
+		for(int i=0; i < airlines.size() ; i++){
+			if(airlines.get(i).getEmail().equals(email) && airlines.get(i).getPassword().equals(password)){
+				Map session = ActionContext.getContext().getSession();
+				session.put("logined","true");
+				session.put("context", new Date());
+				return SUCCESS;
+			}
 		}
 		return ERROR;
 	}
