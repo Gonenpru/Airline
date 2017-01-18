@@ -54,6 +54,39 @@ public class FlightsAction extends ActionSupport {
 		}
 		return execute();
 	}
+	
+	public String updator(){
+		System.out.println("UPDATOR " + getId());
+		Flights f = null;
+		execute();
+		for (int i = 0; i < flightsList.size(); i++){
+			int id = flightsList.get(i).getId();
+			if (id == getId()){
+				f = flightsList.get(i);
+				this.flights = f;
+			}
+		}
+		
+		if (f != null)
+			return SUCCESS;
+		return ERROR;
+
+	}
+	
+	public String update(){
+		Flights flights = getFlights();
+		flights.setDelay("00:00");
+		
+		// DEPARTURE DATE
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		String reportDate = df.format(flights.getD_Departure());
+		reportDate = reportDate.concat(" "+flights.getD_Time()+":00");
+		Timestamp ts = Timestamp.valueOf(reportDate);
+		flights.setDateDeparture(ts);
+
+		flightsDao.update(getFlights());
+		return this.execute();
+	}
 
 	
 	public String delete(){

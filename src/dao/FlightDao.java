@@ -30,6 +30,14 @@ public class FlightDao extends HibernateUtils{
 		return flights;
 	}
 	
+	public Flights update(Flights flights){
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(flights);
+		tx.commit();
+		return flights;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Flights> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();

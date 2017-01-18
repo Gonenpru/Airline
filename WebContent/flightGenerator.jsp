@@ -19,7 +19,7 @@
 </script>
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/font-awesome.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/36a53496c3.js"></script>
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <script src="js/Chart.js"></script>
 <link href="css/animate.css" rel="stylesheet" type="text/css"

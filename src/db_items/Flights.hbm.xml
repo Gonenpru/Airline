@@ -29,12 +29,5 @@
         <property name="dateDeparture" type="timestamp">
             <column name="date_departure" length="13" />
         </property>
-
-        <set name="ticketses" table="tickets" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="flight_id" not-null="true" />
-            </key>
-            <one-to-many class="db_items.Tickets" />
-        </set>
     </class>
 </hibernate-mapping>

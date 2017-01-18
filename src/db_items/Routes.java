@@ -27,7 +27,7 @@ public class Routes implements java.io.Serializable {
 	@Column(name="airline_id")
 	private int airline_id;
 	
-	@Column(name="departure")
+	@Column(name="origin")
 	private String departure;
 	
 	@Column(name="arrival")

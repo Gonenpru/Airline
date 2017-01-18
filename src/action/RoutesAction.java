@@ -21,7 +21,7 @@ public class RoutesAction extends ActionSupport {
 	
 	
 	public String list(){
-		this.routesList = routesDao.list(0);
+		this.routesList = routesDao.list();
 		return SUCCESS;
 	}
 

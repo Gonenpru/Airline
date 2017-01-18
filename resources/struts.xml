@@ -13,6 +13,14 @@
 			<result name="success">flightTable.jsp</result>
 		</action>
 		
+		<action name="updator_flight" class="action.FlightsAction" method="updator">
+			<result name="success">flightUpdator.jsp</result>
+		</action>
+		
+		<action name="update_flight" class="action.FlightsAction" method="update">
+			<result name="success">flightTable.jsp</result>
+		</action>
+		
 		<action name="list_flight" class="action.FlightsAction" method="list">
 			<result name="success">flightTable.jsp</result>
 		</action>

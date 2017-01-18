@@ -19,7 +19,7 @@
 </script>
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/font-awesome.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/36a53496c3.js"></script>
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <script src="js/Chart.js"></script>
 <link href="css/animate.css" rel="stylesheet" type="text/css"
@@ -60,8 +60,8 @@
 		</div>
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><s:a name="action" value="execute_flight"><i class="fa fa-plane" ></i><span>Flights</span></s:a></li>
 				<li><s:a name="action" value="execute_plane"><i class="fa fa-plane" ></i><span>Planes</span></s:a></li>
+				<li><s:a name="action" value="execute_flight"><i class="fa fa-ticket" ></i><span>Flights</span></s:a></li>
 				<li><s:a name="action" value="list_routes"><i class="fa fa-globe"></i><span>Routes</span></s:a></li>
 			</ul>
 		</div>
@@ -69,7 +69,7 @@
 
 	<div class="main-content">
 		<jsp:include page="includes/header_section.jsp" />
-		<h1>PLANES INFO</h1>
+		<h1>PLANES INFORMATION</h1>
 			<div class="contentform">
 					<table id="myTable" class="display" cellspacing="0" width="100%">
 						<thead>
