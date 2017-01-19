@@ -32,7 +32,7 @@ public class RoutesDao extends HibernateUtils {
 		session.beginTransaction();
 		List<Routes> routes = null;
 		try {
-			routes = (List<Routes>) session.createQuery("from Routes").list();
+			routes = (List<Routes>) session.createQuery("from Routes order by id asc").list();
 			System.out.println(routes);
 		} catch (HibernateException e){
 			e.printStackTrace();

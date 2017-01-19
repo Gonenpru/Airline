@@ -20,7 +20,7 @@ public class PlaneDao extends HibernateUtils {
 		session.beginTransaction();
 		List<Planes> planes = null;
 		try {
-			planes = (List<Planes>) session.createQuery("from Planes").list();
+			planes = (List<Planes>) session.createQuery("from Planes order by id asc").list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			session.getTransaction().rollback();
@@ -47,7 +47,6 @@ public class PlaneDao extends HibernateUtils {
 	}
 
 	private String getTotHours(List<Object> list) {
-		// TODO Auto-generated method stub
 		hours = 0;
 		minutes = 0;
 		for (Object obj : list) {
