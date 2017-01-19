@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import static org.junit.Assert.assertEquals;
@@ -11,11 +14,21 @@ import org.junit.Test;
 import db_items.Routes;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestRoutesDao.
+ */
 public class TestRoutesDao {
 
+	/** The routes dao. */
 	private RoutesDao routesDao;
+	
+	/** The session. */
 	private Session session;
 	
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
@@ -23,11 +36,17 @@ public class TestRoutesDao {
 		session.beginTransaction();
 	}
 	
+	/**
+	 * Inits the routes dao.
+	 */
 	@Before
 	public void initRoutesDao(){
 		routesDao = new RoutesDao();
 	}
 	
+	/**
+	 * Test routes dao list.
+	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testRoutesDaoList() {

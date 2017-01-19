@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import static org.junit.Assert.assertEquals;
@@ -11,11 +14,21 @@ import org.junit.Test;
 import db_items.Airlines;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestAirlinesDao.
+ */
 public class TestAirlinesDao {
 	
+	/** The airlines dao. */
 	private AirlinesDao airlinesDao;
+	
+	/** The session. */
 	private Session session;
 
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
@@ -23,11 +36,17 @@ public class TestAirlinesDao {
 		session.beginTransaction();
 	}
 	
+	/**
+	 * Inits the airlines dao.
+	 */
 	@Before
 	public void initAirlinesDao(){
 		airlinesDao = new AirlinesDao();
 	}
 	
+	/**
+	 * Test list.
+	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testList() {

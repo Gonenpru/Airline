@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package hibernate;
 
 import static org.junit.Assert.*;
@@ -6,10 +9,18 @@ import org.junit.Test;
 
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestConnectionHibernate.
+ */
 public class TestConnectionHibernate {
 
+	/** The hibernate utils. */
 	private HibernateUtils hibernateUtils;
 
+	/**
+	 * Test start function.
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void testStartFunction() {
@@ -20,6 +31,9 @@ public class TestConnectionHibernate {
 	}
 	
 
+	/**
+	 * Test stop function.
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void testStopFunction() {

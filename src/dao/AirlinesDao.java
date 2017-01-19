@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import java.util.List;
@@ -8,8 +11,17 @@ import org.hibernate.Session;
 import db_items.Airlines;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AirlinesDao.
+ */
 public class AirlinesDao extends HibernateUtils {
 	
+	/**
+	 * List.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Airlines> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();
