@@ -38,6 +38,7 @@ public class FlightsAction extends ActionSupport {
 			Flights flights = getFlights();
 			flights.setId(flightsDao.list().get(flightsDao.list().size() - 1).getId() + 1);
 			flights.setDelay("00:00");
+			System.out.println(flightsDao.list().size());
 			
 			// DEPARTURE DATE
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");

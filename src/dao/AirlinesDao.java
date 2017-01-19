@@ -6,7 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import db_items.Airlines;
-import db_items.Controllers;
 import utils.HibernateUtils;
 
 public class AirlinesDao extends HibernateUtils {
@@ -17,7 +16,7 @@ public class AirlinesDao extends HibernateUtils {
 		session.beginTransaction();
 		List<Airlines> airlines = null;
 		try {
-			airlines = (List<Airlines>) session.createQuery("from Airlines").list();
+			airlines = (List<Airlines>) session.createQuery("from Airlines order by id asc").list();
 		} catch (HibernateException e){
 			e.printStackTrace();
 			session.getTransaction().rollback();

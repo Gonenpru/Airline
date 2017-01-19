@@ -44,7 +44,7 @@ public class FlightDao extends HibernateUtils{
 		session.beginTransaction();
 		List<Flights> flights = null;
 		try {
-			flights = (List<Flights>) session.createQuery("from Flights").list();
+			flights = (List<Flights>) session.createQuery("from Flights order by id asc").list();
 		} catch (HibernateException e){
 			e.printStackTrace();
 			session.getTransaction().rollback();

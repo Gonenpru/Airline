@@ -10,16 +10,19 @@ import com.opensymphony.xwork2.ActionSupport;
 import dao.AirlinesDao;
 import db_items.Airlines;
 
-
-
 public class LoginAction extends ActionSupport {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	AirlinesDao airlinesdao;
 	List<Airlines> airlines;
 
 	private String email;
 	private String password;
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public String execute() throws Exception {
 		airlinesdao = new AirlinesDao();
 		airlines = airlinesdao.list();
@@ -35,10 +38,8 @@ public class LoginAction extends ActionSupport {
 		return ERROR;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public String logout() throws Exception {
-		//        HttpSession session = ServletActionContext.getRequest().getSession();
-		//        session.removeAttribute("logined");
-		//        session.removeAttribute("context"); 
 		Map session = ActionContext.getContext().getSession();
 		session.remove("logined");
 		session.remove("context");
