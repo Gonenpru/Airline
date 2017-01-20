@@ -53,6 +53,15 @@ public class LoginAction extends ActionSupport {
 		return ERROR;
 	}
 	
+  /**
+	 * Index goes to the main page
+	 *
+	 * @return succes text. Just for redirection
+	 */
+  public String index() {
+		return SUCCESS;
+	}
+  
 	/**
 	 * Logout.
 	 *
