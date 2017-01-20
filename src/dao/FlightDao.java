@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import java.util.List;
@@ -9,8 +12,18 @@ import org.hibernate.Transaction;
 import db_items.Flights;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FlightDao.
+ */
 public class FlightDao extends HibernateUtils{
 	
+	/**
+	 * Adds the.
+	 *
+	 * @param flights the flights
+	 * @return the flights
+	 */
 	public Flights add(Flights flights) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
@@ -19,6 +32,12 @@ public class FlightDao extends HibernateUtils{
 		return flights;
 	}
 	
+	/**
+	 * Delete.
+	 *
+	 * @param id the id
+	 * @return the flights
+	 */
 	public Flights delete(int id){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
@@ -30,6 +49,12 @@ public class FlightDao extends HibernateUtils{
 		return flights;
 	}
 	
+	/**
+	 * Update.
+	 *
+	 * @param flights the flights
+	 * @return the flights
+	 */
 	public Flights update(Flights flights){
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
@@ -38,6 +63,11 @@ public class FlightDao extends HibernateUtils{
 		return flights;
 	}
 	
+	/**
+	 * List.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Flights> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();

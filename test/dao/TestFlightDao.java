@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import static org.junit.Assert.*;
@@ -13,11 +16,21 @@ import org.junit.Test;
 import db_items.Flights;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestFlightDao.
+ */
 public class TestFlightDao {
 
+	/** The flight dao. */
 	private FlightDao flightDao;
+	
+	/** The session. */
 	private Session session;
 	
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
@@ -25,11 +38,17 @@ public class TestFlightDao {
 		session.beginTransaction();
 	}
 	
+	/**
+	 * Inits the flights dao.
+	 */
 	@Before
 	public void initFlightsDao(){
 		flightDao = new FlightDao();
 	}
 	
+	/**
+	 * Test flights dao list.
+	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testFlightsDaoList() {
@@ -43,6 +62,9 @@ public class TestFlightDao {
 		}
 	}
 
+	/**
+	 * Test flights dao add.
+	 */
 	@Test
 	public void testFlightsDaoAdd(){
 		Flights flights = new Flights();
@@ -60,6 +82,9 @@ public class TestFlightDao {
 		flightDao.delete(99);
 	}	
 	
+	/**
+	 * Test flights dao delete.
+	 */
 	@Test
 	public void testFlightsDaoDelete(){
 		Flights flights = new Flights();
@@ -74,6 +99,9 @@ public class TestFlightDao {
 		assertEquals(0, query.list().size());
 	}
 	
+	/**
+	 * Test flights dao update.
+	 */
 	@Test 
 	public void testFlightsDaoUpdate(){
 		Flights flights = new Flights();

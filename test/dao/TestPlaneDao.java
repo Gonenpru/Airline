@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import static org.junit.Assert.assertEquals;
@@ -13,11 +16,21 @@ import org.junit.Test;
 import db_items.Planes;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestPlaneDao.
+ */
 public class TestPlaneDao {
 
+	/** The plane dao. */
 	private PlaneDao planeDao;
+	
+	/** The session. */
 	private Session session;
 	
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
@@ -25,11 +38,17 @@ public class TestPlaneDao {
 		session.beginTransaction();
 	}
 	
+	/**
+	 * Inits the plane dao.
+	 */
 	@Before
 	public void initPlaneDao(){
 		planeDao = new PlaneDao();
 	}
 	
+	/**
+	 * Test plane dao list.
+	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testPlaneDaoList() {
@@ -43,6 +62,9 @@ public class TestPlaneDao {
 		}
 	}
 	
+	/**
+	 * Test plane dao plane name.
+	 */
 	@Test
 	public void testPlaneDaoPlaneName(){
 		String name_1 = planeDao.getPlaneName(1);
@@ -52,6 +74,9 @@ public class TestPlaneDao {
 		assertEquals(name_1, fin);
 	}
 	
+	/**
+	 * Test plane dao plane hours.
+	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testPlaneDaoPlaneHours(){
@@ -79,6 +104,9 @@ public class TestPlaneDao {
 	}
 	
 	
+	/**
+	 * Test plane dao plane flights.
+	 */
 	@Test
 	public void testPlaneDaoPlaneFlights(){
 		int total_1 = planeDao.getPlaneFlights(1);

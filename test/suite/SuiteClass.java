@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package suite;
 
 import org.junit.runner.RunWith;
@@ -15,6 +18,9 @@ import hibernate.TestInitHibernate;
 import login.TestLoginAction;
 
 
+/**
+ * The Class SuiteClass.
+ */
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({

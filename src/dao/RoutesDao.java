@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import java.util.List;
@@ -9,8 +12,18 @@ import org.hibernate.Session;
 import db_items.Routes;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RoutesDao.
+ */
 public class RoutesDao extends HibernateUtils {
 	
+	/**
+	 * List specific.
+	 *
+	 * @param id the id
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Routes> listSpecific(int id){
 		Session session = HibernateUtils.getSessionFactory().openSession();
@@ -26,6 +39,11 @@ public class RoutesDao extends HibernateUtils {
 		return list;
 	}
 	
+	/**
+	 * List.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Routes> list(){
 		Session session = HibernateUtils.getSessionFactory().openSession();

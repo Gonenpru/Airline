@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import java.util.List;
@@ -9,11 +12,23 @@ import org.hibernate.Session;
 import db_items.Planes;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PlaneDao.
+ */
 public class PlaneDao extends HibernateUtils {
 
+	/** The hours. */
 	private int hours;
+	
+	/** The minutes. */
 	private int minutes;
 
+	/**
+	 * List.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Planes> list() {
 		Session session = HibernateUtils.getSessionFactory().openSession();
@@ -28,6 +43,12 @@ public class PlaneDao extends HibernateUtils {
 		return planes;
 	}
 
+	/**
+	 * Gets the plane name.
+	 *
+	 * @param id the id
+	 * @return the plane name
+	 */
 	public String getPlaneName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -36,6 +57,12 @@ public class PlaneDao extends HibernateUtils {
 		return deleteBrackets(name);
 	}
 
+	/**
+	 * Gets the plane hours.
+	 *
+	 * @param id the id
+	 * @return the plane hours
+	 */
 	@SuppressWarnings("unchecked")
 	public String getPlaneHours(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
@@ -46,6 +73,12 @@ public class PlaneDao extends HibernateUtils {
 		return totHours;
 	}
 
+	/**
+	 * Gets the tot hours.
+	 *
+	 * @param list the list
+	 * @return the tot hours
+	 */
 	private String getTotHours(List<Object> list) {
 		hours = 0;
 		minutes = 0;
@@ -62,6 +95,12 @@ public class PlaneDao extends HibernateUtils {
 		return (((hours < 10) ? "0" + hours : hours) + ":" + ((minutes < 10) ? "0" + minutes : minutes));
 	}
 
+	/**
+	 * Gets the plane flights.
+	 *
+	 * @param id the id
+	 * @return the plane flights
+	 */
 	public int getPlaneFlights(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -71,6 +110,12 @@ public class PlaneDao extends HibernateUtils {
 		return total;
 	}
 
+	/**
+	 * Delete brackets.
+	 *
+	 * @param str the str
+	 * @return the string
+	 */
 	public String deleteBrackets(String str) {
 		return str.substring(1, str.length() - 1);
 	}

@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package action;
 import static org.junit.Assert.assertEquals;
 
@@ -14,33 +17,57 @@ import dao.FlightDao;
 import db_items.Flights;
 import utils.HibernateUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestFlightsAction.
+ */
 public class TestFlightsAction {
 	
+	/** The flights action. */
 	private FlightsAction flightsAction;
+	
+	/** The flight dao. */
 	private FlightDao flightDao;
+	
+	/** The session. */
 	private Session session;
 
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
 		flightDao = new FlightDao();
 	}
 	
+	/**
+	 * Inits the flights action.
+	 */
 	@Before
 	public void initFlightsAction(){
 		flightsAction = new FlightsAction();
 	}
 	
+	/**
+	 * Test execute function.
+	 */
 	@Test
 	public void testExecuteFunction() {	
 		assertEquals("success", flightsAction.execute());
 	}
 	
+	/**
+	 * Test return list from dao.
+	 */
 	@Test
 	public void testReturnListFromDao() {
 		assertEquals("success", flightsAction.list());
 	}
 
+	/**
+	 * Test add function.
+	 */
 	@Test
 	public void testAddFunction(){
 		Flights f = new Flights(10, 0, 0, 0, 0, "00:00", "00:00", new Timestamp(0));
@@ -52,6 +79,9 @@ public class TestFlightsAction {
 		flightDao.delete(flightsAction.getFlights().getId());
 	}
 	
+	/**
+	 * Test update function.
+	 */
 	@Test
 	public void testUpdateFunction() {
 		session = HibernateUtils.getSessionFactory().openSession();
