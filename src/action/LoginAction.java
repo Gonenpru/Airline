@@ -38,6 +38,10 @@ public class LoginAction extends ActionSupport {
 		return ERROR;
 	}
 	
+	public String index() {
+		return SUCCESS;
+	}
+	
 	@SuppressWarnings("rawtypes")
 	public String logout() throws Exception {
 		Map session = ActionContext.getContext().getSession();
