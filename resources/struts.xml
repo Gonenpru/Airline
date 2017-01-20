@@ -7,45 +7,53 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
 	<package name="default" extends="struts-default" namespace="/">
-	
-	<action name="login" class="action.LoginAction" >
-            <result name="success" type="dispatcher">/index.jsp</result>
-            <result name="error" type="redirect">/login.jsp</result>
-        </action>
 
-		<!-- FLIGHTS -->		
-		<action name="delete_flight" class="action.FlightsAction" method="delete">
+		<action name="login" class="action.LoginAction">
+			<result name="success" type="dispatcher">/index.jsp</result>
+			<result name="error" type="redirect">/login.jsp</result>
+		</action>
+		<action name="main" method="index" class="action.LoginAction">
+			<result name="success">mainPage.jsp</result>
+		</action>
+		<!-- FLIGHTS -->
+		<action name="delete_flight" class="action.FlightsAction"
+			method="delete">
 			<result name="success">flightTable.jsp</result>
 		</action>
-		
-		<action name="updator_flight" class="action.FlightsAction" method="updator">
+
+		<action name="updator_flight" class="action.FlightsAction"
+			method="updator">
 			<result name="success">flightUpdator.jsp</result>
 		</action>
-		
-		<action name="update_flight" class="action.FlightsAction" method="update">
+
+		<action name="update_flight" class="action.FlightsAction"
+			method="update">
 			<result name="success">flightTable.jsp</result>
 		</action>
-		
+
 		<action name="list_flight" class="action.FlightsAction" method="list">
 			<result name="success">flightTable.jsp</result>
 		</action>
-	
+
 		<!-- MENU ITEMS -->
-		<action name="execute_flight" class="action.FlightsAction" method="execute">
+		<action name="execute_flight" class="action.FlightsAction"
+			method="execute">
 			<result name="success">flightGenerator.jsp</result>
 		</action>
-		
-		<action name="execute_flight_table" class="action.FlightsAction" method="execute">
+
+		<action name="execute_flight_table" class="action.FlightsAction"
+			method="execute">
 			<result name="success">flightTable.jsp</result>
 		</action>
-		
+
 		<action name="list_routes" class="action.RoutesAction" method="list">
 			<result name="success">routesTable.jsp</result>
 		</action>
-		
-		<action name="execute_plane" class="action.PlanesAction" method="execute">
+
+		<action name="execute_plane" class="action.PlanesAction"
+			method="execute">
 			<result name="success">planeTable.jsp</result>
 		</action>
-		
+
 	</package>
 </struts>

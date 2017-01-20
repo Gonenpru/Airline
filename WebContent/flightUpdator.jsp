@@ -39,7 +39,7 @@
 	<div class="left-side sticky-left-side">
 		<div class="logo">
 			<h1>
-				<a href="index.jsp">Index</a>
+				<s:a action="main">Index</s:a>
 			</h1>
 		</div>
 		<div class="logo-icon text-center">
